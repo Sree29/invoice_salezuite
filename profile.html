@@ -6,7 +6,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Invoice</title>
-  <link rel="icon" type="image/png" href="assets/images/favicon.png" sizes="16x16">
+  <!-- <link rel="icon" type="image/png" href="assets/images/favicon.png" sizes="16x16"> -->
+   <link rel="icon" type="image/png" href="assets/images/logo.png" sizes="50x50">
   <!-- remix icon font css  -->
   <link rel="stylesheet" href="assets/css/remixicon.css">
   <!-- BootStrap css -->
@@ -38,77 +39,83 @@
   <!-- main css -->
   <link rel="stylesheet" href="assets/css/style.css">
 
-<style>
+  <style>
+    /* Default (light mode) */
+    .sidebar-menu li>a {
+      transition: all 0.2s ease;
+      color: #333;
+      /* dark gray text */
+    }
 
-/* Default (light mode) */
-.sidebar-menu li > a {
-  transition: all 0.2s ease;
-  color: #333; /* dark gray text */
-}
+    .sidebar-menu li>a:hover {
+      color: #089404;
+      /* green on hover */
+    }
 
-.sidebar-menu li > a:hover {
-  color: #089404; /* green on hover */
-}
+    .sidebar-menu li>a.active-page {
+      background-color: #089404;
+      color: #fff;
+    }
 
-.sidebar-menu li > a.active-page {
-  background-color: #089404;
-  color: #fff;
-}
+    .sidebar-menu li>a.active-page:hover {
+      color: #fff;
+    }
 
-.sidebar-menu li > a.active-page:hover {
-  color: #fff;
-}
+    /* Dark mode adjustments */
+    [data-theme="dark"] .sidebar-menu li>a {
+      color: #ccc;
+      /* light gray for better contrast */
+    }
 
-/* Dark mode adjustments */
-[data-theme="dark"] .sidebar-menu li > a {
-  color: #ccc; /* light gray for better contrast */
-}
+    [data-theme="dark"] .sidebar-menu li>a:hover {
+      color: #9fff9f;
+      /* soft green on hover in dark mode */
+    }
 
-[data-theme="dark"] .sidebar-menu li > a:hover {
-  color: #9fff9f; /* soft green on hover in dark mode */
-}
+    [data-theme="dark"] .sidebar-menu li>a.active-page {
+      background-color: #089404;
+      color: #fff;
+    }
 
-[data-theme="dark"] .sidebar-menu li > a.active-page {
-  background-color: #089404;
-  color: #fff;
-}
-
-[data-theme="dark"] .sidebar-menu li > a.active-page:hover {
-  color: #fff;
-}
+    [data-theme="dark"] .sidebar-menu li>a.active-page:hover {
+      color: #fff;
+    }
 
 
-  /* When in light mode, apply soft green background */
-  html[data-theme="light"] body {
-    background-color: #e5fae5;
-  }
-html[data-theme="light"] .navbar-search input {
-  background-color: #e5fae5;
-}
-html[data-theme="light"] [data-theme-toggle] {
-  background-color: #e5fae5 !important;
-}
+    /* When in light mode, apply soft green background */
+    html[data-theme="light"] body {
+      background-color: #e5fae5;
+    }
 
-  /* When in dark mode, use dark background */
-  html[data-theme="dark"] body {
-    background-color: #121212;
-  }
-  .sidebar-menu .sidebar-submenu li.active-page > a {
-  color: #000; /* black */
-}
+    html[data-theme="light"] .navbar-search input {
+      background-color: #e5fae5;
+    }
 
-</style>
+    html[data-theme="light"] [data-theme-toggle] {
+      background-color: #e5fae5 !important;
+    }
+
+    /* When in dark mode, use dark background */
+    html[data-theme="dark"] body {
+      background-color: #121212;
+    }
+
+    .sidebar-menu .sidebar-submenu li.active-page>a {
+      color: #000;
+      /* black */
+    }
+  </style>
 
 </head>
 
- <body>
+<body>
   <aside class="sidebar">
     <button type="button" class="sidebar-close-btn">
       <iconify-icon icon="radix-icons:cross-2"></iconify-icon>
     </button>
     <div>
       <a href="index.html" class="sidebar-logo">
-       <img src="assets/images/logo1.png" alt="site logo" class="light-logo">
+        <img src="assets/images/logo1.png" alt="site logo" class="light-logo">
         <img src="assets/images/logo1.png" alt="site logo" class="dark-logo">
         <img src="assets/images/logo1.png" alt="site logo" class="logo-icon">
       </a>
@@ -142,6 +149,18 @@ html[data-theme="light"] [data-theme-toggle] {
         </ul> -->
         </li>
         <li>
+          <a href="invoice-list.html">
+            <iconify-icon icon="mdi:file-document-outline" class="menu-icon"></iconify-icon>
+            <span>Manage Invoice</span>
+          </a>
+        </li>
+        <li>
+          <a href="invoice-add.html">
+            <iconify-icon icon="mdi:file-plus-outline" class="menu-icon"></iconify-icon>
+            <span>Create Invoice</span>
+          </a>
+        </li>
+        <li>
           <a href="Service.html">
             <iconify-icon icon="mdi:application-cog-outline" class="menu-icon"></iconify-icon>
             <span>Services</span>
@@ -153,6 +172,8 @@ html[data-theme="light"] [data-theme-toggle] {
             <span>Customers</span>
           </a>
         </li>
+
+       
         <!-- <li class="sidebar-menu-group-title">Application</li> -->
 
         <!-- <li>
@@ -162,7 +183,7 @@ html[data-theme="light"] [data-theme-toggle] {
           </a>
         </li> -->
 
-        <li class="dropdown">
+        <!-- <li class="dropdown">
           <a href="javascript:void(0)">
             <iconify-icon icon="hugeicons:invoice-03" class="menu-icon"></iconify-icon>
             <span>Invoice</span>
@@ -183,12 +204,12 @@ html[data-theme="light"] [data-theme-toggle] {
               <a href="invoice-edit.html"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Edit</a>
             </li>
           </ul>
-        </li>
+        </li> -->
 
         <!-- <li class="sidebar-menu-group-title">UI Elements</li> -->
 
 
-        <li class="dropdown">
+        <!-- <li class="dropdown">
           <a href="javascript:void(0)">
             <iconify-icon icon="flowbite:users-group-outline" class="menu-icon"></iconify-icon>
             <span>Users</span>
@@ -202,13 +223,13 @@ html[data-theme="light"] [data-theme-toggle] {
             </li>
 
           </ul>
-        </li>
+        </li> -->
 
 
         <!-- 
         <li class="sidebar-menu-group-title">Application</li> -->
 
-        <li class="dropdown">
+        <!-- <li class="dropdown">
           <a href="javascript:void(0)">
             <iconify-icon icon="simple-line-icons:vector" class="menu-icon"></iconify-icon>
             <span>Authentication</span>
@@ -225,7 +246,7 @@ html[data-theme="light"] [data-theme-toggle] {
                 Password</a>
             </li>
           </ul>
-        </li>
+        </li> -->
         <!-- <li>
           <a href="access-denied.html">
             <i class="ri-folder-lock-line text-xl me-14 d-flex w-auto"></i>
@@ -234,8 +255,36 @@ html[data-theme="light"] [data-theme-toggle] {
         </li> -->
 
       </ul>
-    </div>
+  </div>
+      <div class="sidebar-footer mt-auto text-center p-3">
+    <p class="text-muted text-sm mb-0">
+      <a href="https://cognetz.com/" class="text-decoration-underline text-primary fw-medium">
+        <!-- <iconify-icon icon="mdi:lifebuoy" class="me-1"></iconify-icon> -->
+        Need help? Visit support
+      </a>
+    </p>
+  </div>
+
   </aside>
+<style>
+  .sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full height of viewport */
+}
+
+.sidebar-menu-area {
+  flex: 1; /* Take all remaining space */
+  overflow-y: auto; /* Scroll only menu area if too tall */
+}
+
+.sidebar-footer {
+  border-top: 1px solid #e0e0e0; /* optional divider */
+  padding: 12px 16px;
+  text-align: center;
+}
+
+</style>
 
   <main class="dashboard-main">
     <div class="navbar-header">
@@ -593,10 +642,34 @@ html[data-theme="light"] [data-theme-toggle] {
             Notification dropdown end -->
 
             <div class="dropdown">
-              <button class="d-flex justify-content-center align-items-center rounded-circle" type="button"
+              <!-- <button class="d-flex justify-content-center align-items-center rounded-circle" type="button"
                 data-bs-toggle="dropdown">
                 <img src="assets/images/user.png" alt="image" class="w-40-px h-40-px object-fit-cover rounded-circle">
-              </button>
+              </button> -->
+             
+<!-- <button id="companyAvatar"
+  class="d-flex justify-content-center align-items-center rounded-circle text-white fw-bold border-0"
+  type="button" data-bs-toggle="dropdown"
+  style="width: 40px; height: 40px; font-size: 16px; background-color: #089404;">
+</button> -->
+        <button id="companyAvatar"
+              class="d-flex justify-content-center align-items-center rounded-circle text-white fw-bold border-0"
+              type="button" data-bs-toggle="dropdown"
+              style="width: 40px; height: 40px; font-size: 16px; background-color: #089404;"></button>
+
+            </button>
+            <script>
+              document.addEventListener("DOMContentLoaded", function () {
+                const avatar = document.getElementById("companyAvatar");
+                const companyName = localStorage.getItem("companyName");
+                if (avatar && companyName) {
+                  avatar.innerText = companyName.charAt(0).toUpperCase();
+                } else {
+                  avatar.innerText = "T";
+                }
+              });
+            </script>
+
               <div class="dropdown-menu to-top dropdown-menu-sm">
                 <div
                   class="py-12 px-16 radius-8 bg-primary-50 mb-16 d-flex align-items-center justify-content-between gap-2">
@@ -617,7 +690,7 @@ html[data-theme="light"] [data-theme-toggle] {
 
                   <li>
                     <a class="dropdown-item text-black px-0 py-8 hover-bg-transparent hover-text-danger d-flex align-items-center gap-3"
-                      href="javascript:void(0)">
+                      href="sign-in.html">
                       <iconify-icon icon="lucide:power" class="icon text-xl"></iconify-icon> Log Out</a>
                   </li>
                 </ul>
@@ -641,15 +714,24 @@ html[data-theme="light"] [data-theme-toggle] {
           <li class="fw-medium">View Profile</li>
         </ul>
       </div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const infoSpan = document.querySelector("span.w-70.text-secondary-light.fw-medium");
+    if (infoSpan) {
+      const rawText = infoSpan.textContent;
+      const companyName = rawText.replace(":", "").trim();
+      if (companyName) {
+        localStorage.setItem("companyName", companyName);
+      }
+    }
+  });
+</script>
 
       <div class="row gy-4">
         <div class="col-lg-4">
           <div class="user-grid-card position-relative border radius-16 overflow-hidden bg-base h-100">
             <!-- <img src="assets/images/user-grid/profile.png" alt="" class="w-100 object-fit-cover"> -->
-             <img src="assets/images/user-grid/profile.png" 
-     alt="" 
-     class="w-100 object-fit-cover" 
-     style="height: 120px;">
+            <img src="assets/images/user-grid/profile.png" alt="" class="w-100 object-fit-cover" style="height: 120px;">
 
             <div class="pb-24 ms-16 mb-24 me-16  mt--100">
               <div class="text-center border border-top-0 border-start-0 border-end-0">
@@ -659,11 +741,11 @@ html[data-theme="light"] [data-theme-toggle] {
                 <span class="text-secondary-light mb-16">ifrandom@gmail.com</span>
               </div>
               <div class="mt-24">
-                <h6 class="text-xl mb-16">Personal Info</h6>
+                <h6 class="text-xl mb-16">Business Info</h6>
                 <ul>
                   <li class="d-flex align-items-center gap-1 mb-12">
                     <span class="w-30 text-md fw-semibold text-primary-light">Full Name</span>
-                    <span class="w-70 text-secondary-light fw-medium">: Will Jonto</span>
+                    <span class="w-70 text-secondary-light fw-medium">: Thomas Jonto</span>
                   </li>
                   <li class="d-flex align-items-center gap-1 mb-12">
                     <span class="w-30 text-md fw-semibold text-primary-light"> Email</span>
@@ -671,7 +753,7 @@ html[data-theme="light"] [data-theme-toggle] {
                   </li>
                   <li class="d-flex align-items-center gap-1 mb-12">
                     <span class="w-30 text-md fw-semibold text-primary-light"> Phone Number</span>
-                    <span class="w-70 text-secondary-light fw-medium">: (1) 2536 2561 2365</span>
+                    <span class="w-70 text-secondary-light fw-medium">:2536256123</span>
                   </li>
                   <li class="d-flex align-items-center gap-1 mb-12">
                     <span class="w-30 text-md fw-semibold text-primary-light"> Adress</span>
@@ -708,34 +790,41 @@ html[data-theme="light"] [data-theme-toggle] {
         <div class="col-lg-8">
           <div class="card h-100">
             <div class="card-body p-24">
-              <ul class="nav border-gradient-tab nav-pills mb-20 d-inline-flex" id="pills-tab" role="tablist">
+              <!-- <ul class="nav border-gradient-tab nav-pills mb-20 d-inline-flex" id="pills-tab" role="tablist"> -->
+              <ul class="nav border-gradient-tab nav-pills mb-20 d-inline-flex flex-nowrap overflow-auto" id="pills-tab"
+                role="tablist">
+
                 <li class="nav-item" role="presentation">
-                  <button class="nav-link d-flex align-items-center px-24 active" id="pills-edit-profile-tab"
+                  <button class="nav-link d-flex align-items-center px-20 active" id="pills-edit-profile-tab"
                     data-bs-toggle="pill" data-bs-target="#pills-edit-profile" type="button" role="tab"
                     aria-controls="pills-edit-profile" aria-selected="true">
                     Edit Profile
                   </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                  <button class="nav-link d-flex align-items-center px-24" id="pills-change-passwork-tab"
+                  <button class="nav-link d-flex align-items-center px-20" id="pills-change-passwork-tab"
                     data-bs-toggle="pill" data-bs-target="#pills-change-passwork" type="button" role="tab"
                     aria-controls="pills-change-passwork" aria-selected="false" tabindex="-1">
                     Change Password
                   </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                  <button class="nav-link d-flex align-items-center px-24" id="pills-invoice-prefix-tab"
+                  <button class="nav-link d-flex align-items-center px-20" id="pills-invoice-prefix-tab"
                     data-bs-toggle="pill" data-bs-target="#pills-invoice-prefix" type="button" role="tab"
                     aria-controls="pills-invoice-prefix" aria-selected="false">
                     Invoice Prefix
                   </button>
                 </li>
 
-                <!-- <li class="nav-item" role="presentation">
-                              <button class="nav-link d-flex align-items-center px-24" id="pills-notification-tab" data-bs-toggle="pill" data-bs-target="#pills-notification" type="button" role="tab" aria-controls="pills-notification" aria-selected="false" tabindex="-1">
-                                Notification Settings
-                              </button>
-                            </li> -->
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link d-flex align-items-center px-20" id="pills-subscription-tab"
+                    data-bs-toggle="pill" data-bs-target="#pills-subscription" type="button" role="tab"
+                    aria-controls="pills-subscription" aria-selected="false">
+                    Subscription
+                  </button>
+                </li>
+
+
               </ul>
 
               <div class="tab-content" id="pills-tabContent">
@@ -765,7 +854,7 @@ html[data-theme="light"] [data-theme-toggle] {
                         <div class="mb-20">
                           <label for="name" class="form-label fw-semibold text-primary-light text-sm mb-8">Full Name
                             <span class="text-danger-600">*</span></label>
-                          <input type="text" class="form-control radius-8" id="name" placeholder="Enter Full Name">
+                          <input type="text" class="form-control radius-8" id="name" placeholder="Thomas Jonto">
                         </div>
                       </div>
                       <div class="col-sm-6">
@@ -773,22 +862,22 @@ html[data-theme="light"] [data-theme-toggle] {
                           <label for="email" class="form-label fw-semibold text-primary-light text-sm mb-8">Email <span
                               class="text-danger-600">*</span></label>
                           <input type="email" class="form-control radius-8" id="email"
-                            placeholder="Enter email address">
+                            placeholder="willjontoax@gmail.com">
                         </div>
                       </div>
                       <div class="col-sm-6">
                         <div class="mb-20">
                           <label for="number"
                             class="form-label fw-semibold text-primary-light text-sm mb-8">Phone</label>
-                          <input type="email" class="form-control radius-8" id="number"
-                            placeholder="Enter phone number">
+                          <input type="email" class="form-control radius-8" id="number" placeholder="2536256123">
                         </div>
                       </div>
                       <div class="col-sm-6">
                         <div class="mb-20">
                           <label for="address"
                             class="form-label fw-semibold text-primary-light text-sm mb-8">Address</label>
-                          <input type="text" class="form-control radius-8" id="address" placeholder="Enter address">
+                          <input type="text" class="form-control radius-8" id="address"
+                            placeholder=" 4517 Washington Ave, Manchester, KY 39495, USA">
                         </div>
                       </div>
                       <div class="row">
@@ -796,8 +885,7 @@ html[data-theme="light"] [data-theme-toggle] {
                           <div class="mb-20">
                             <label for="gstin"
                               class="form-label fw-semibold text-primary-light text-sm mb-8">GSTIN</label>
-                            <input type="text" class="form-control radius-8" id="gstin"
-                              placeholder="Enter 15-digit GSTIN">
+                            <input type="text" class="form-control radius-8" id="gstin" placeholder="29ABCDE1234F1Z5">
                           </div>
                         </div>
 
@@ -806,7 +894,7 @@ html[data-theme="light"] [data-theme-toggle] {
                             <label for="company_name"
                               class="form-label fw-semibold text-primary-light text-sm mb-8">Company Name</label>
                             <input type="text" class="form-control radius-8" id="company_name"
-                              placeholder="Enter company name">
+                              placeholder="Tech Solutions Pvt. Ltd.">
                           </div>
                         </div>
 
@@ -815,7 +903,7 @@ html[data-theme="light"] [data-theme-toggle] {
                             <label for="company_address"
                               class="form-label fw-semibold text-primary-light text-sm mb-8">Company Address</label>
                             <input type="text" class="form-control radius-8" id="company_address"
-                              placeholder="Enter company address">
+                              placeholder="21/A Silicon Valley Road, Bengaluru, KA 560037">
                           </div>
                         </div>
 
@@ -823,56 +911,20 @@ html[data-theme="light"] [data-theme-toggle] {
                           <div class="mb-20">
                             <label for="state"
                               class="form-label fw-semibold text-primary-light text-sm mb-8">State</label>
-                            <input type="text" class="form-control radius-8" id="state" placeholder="Enter state">
+                            <input type="text" class="form-control radius-8" id="state" placeholder="Kerala">
                           </div>
                         </div>
                       </div>
 
-                      <!-- <div class="col-sm-6">
-                                            <div class="mb-20">
-                                                <label for="depart" class="form-label fw-semibold text-primary-light text-sm mb-8">Department <span class="text-danger-600">*</span> </label>
-                                                <select class="form-control radius-8 form-select" id="depart">
-                                                    <option>Enter Event Title </option>
-                                                    <option>Enter Event Title One </option>
-                                                    <option>Enter Event Title Two</option>
-                                                </select>
-                                            </div>
-                                        </div> -->
-                      <!-- <div class="col-sm-6">
-                                            <div class="mb-20">
-                                                <label for="desig" class="form-label fw-semibold text-primary-light text-sm mb-8">Designation <span class="text-danger-600">*</span> </label>
-                                                <select class="form-control radius-8 form-select" id="desig">
-                                                    <option>Enter Designation Title </option>
-                                                    <option>Enter Designation Title One </option>
-                                                    <option>Enter Designation Title Two</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="mb-20">
-                                                <label for="Language" class="form-label fw-semibold text-primary-light text-sm mb-8">Language <span class="text-danger-600">*</span> </label>
-                                                <select class="form-control radius-8 form-select" id="Language">
-                                                    <option> English</option>
-                                                    <option> Bangla </option>
-                                                    <option> Hindi</option>
-                                                    <option> Arabic</option>
-                                                </select>
-                                            </div>
-                                        </div> -->
-                      <!-- <div class="col-sm-12">
-                                            <div class="mb-20"> -->
-                      <!-- <label for="desc" class="form-label fw-semibold text-primary-light text-sm mb-8">Description</label> -->
-                      <!-- <textarea name="#0" class="form-control radius-8" id="desc" placeholder="Write description..."></textarea>
-                                            </div>
-                                        </div> -->
+
                     </div>
                     <div class="d-flex align-items-center justify-content-center gap-3">
                       <button type="button"
                         class="border border-danger-600 bg-hover-danger-200 text-danger-600 text-md px-56 py-11 radius-8">
                         Cancel
                       </button>
-                      <button type="button"
-                        class="btn text-md px-56 py-12 radius-8"  style="background-color: #089404; border: 1px solid #089404; color: #fff;">
+                      <button type="button" class="btn text-md px-56 py-12 radius-8"
+                        style="background-color: #089404; border: 1px solid #089404; color: #fff;">
                         Save
                       </button>
                     </div>
@@ -904,13 +956,13 @@ html[data-theme="light"] [data-theme-toggle] {
                         data-toggle="#confirm-password"></span>
                     </div>
                   </div>
-                   <div class="d-flex align-items-center justify-content-center gap-3">
+                  <div class="d-flex align-items-center justify-content-center gap-3">
                     <button type="button"
                       class="border border-danger-600 bg-hover-danger-200 text-danger-600 text-md px-56 py-11 radius-8">
                       Cancel
                     </button>
-                    <button type="submit"
-                      class="btn text-md px-56 py-12 radius-8"  style="background-color: #089404; border: 1px solid #089404; color: #fff;">
+                    <button type="submit" class="btn text-md px-56 py-12 radius-8"
+                      style="background-color: #089404; border: 1px solid #089404; color: #fff;">
                       Save
                     </button>
                   </div>
@@ -931,11 +983,90 @@ html[data-theme="light"] [data-theme-toggle] {
                       class="border border-danger-600 bg-hover-danger-200 text-danger-600 text-md px-56 py-11 radius-8">
                       Cancel
                     </button>
-                    <button type="submit"
-                      class="btn text-md px-56 py-12 radius-8"  style="background-color: #089404; border: 1px solid #089404; color: #fff;">
+                    <button type="submit" class="btn text-md px-56 py-12 radius-8"
+                      style="background-color: #089404; border: 1px solid #089404; color: #fff;">
                       Save
                     </button>
                   </div>
+                </div>
+
+
+
+                <div class="tab-pane fade" id="pills-subscription" role="tabpanel"
+                  aria-labelledby="pills-subscription-tab" tabindex="0">
+
+
+                  <form action="#">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="mb-20">
+                          <label for="plan" class="form-label fw-semibold text-primary-light text-sm mb-8">Plan
+                            Name</label>
+                          <input type="text" class="form-control radius-8" id="plan" placeholder="Premium Plan">
+                        </div>
+                      </div>
+
+
+
+                      <div class="col-sm-6">
+                        <div class="mb-20">
+                          <label for="amount"
+                            class="form-label fw-semibold text-primary-light text-sm mb-8">Amount</label>
+                          <input type="text" class="form-control radius-8" id="amount" placeholder="₹499">
+                        </div>
+                      </div>
+
+                      <div class="col-sm-6">
+                        <div class="mb-20">
+                          <label for="status"
+                            class="form-label fw-semibold text-primary-light text-sm mb-8">Status</label>
+                          <select class="form-select radius-8" id="status">
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                            <option value="expired">Expired</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="mb-20">
+                          <label for="duration"
+                            class="form-label fw-semibold text-primary-light text-sm mb-8">Duration</label>
+                          <select class="form-select radius-8" id="duration">
+                            <option value="1_month">1 Month</option>
+                            <option value="3_months">3 Months</option>
+                            <option value="6_months">6 Months</option>
+                            <option value="12_months">12 Months</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-6">
+                        <div class="mb-20">
+                          <label for="start_date" class="form-label fw-semibold text-primary-light text-sm mb-8">Start
+                            Date</label>
+                          <input type="date" class="form-control radius-8" id="start_date">
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="mb-20">
+                          <label for="end_date" class="form-label fw-semibold text-primary-light text-sm mb-8">End
+                            Date</label>
+                          <input type="date" class="form-control radius-8" id="end_date">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="d-flex align-items-center justify-content-center gap-3">
+                      <button type="button"
+                        class="border border-danger-600 bg-hover-danger-200 text-danger-600 text-md px-56 py-11 radius-8">
+                        Cancel
+                      </button>
+                      <button type="button" class="btn text-md px-56 py-12 radius-8"
+                        style="background-color: #089404; border: 1px solid #089404; color: #fff;">
+                        Save
+                      </button>
+                    </div>
+                  </form>
                 </div>
 
               </div>
@@ -945,14 +1076,18 @@ html[data-theme="light"] [data-theme-toggle] {
       </div>
     </div>
 
-    <footer class="d-footer">
+   
+   <footer class="d-footer">
       <div class="row align-items-center justify-content-between">
         <div class="col-auto">
-          <p class="mb-0">© 2024 WowDash. All Rights Reserved.</p>
+          <p class="mb-0">
+  © 2025 <a href="https://cognetz.com/" target="_blank" class="text-decoration-none" style="color: inherit;">Cognetz</a>. All Rights Reserved.
+</p>
+
         </div>
-        <div class="col-auto">
-          <p class="mb-0">Made by <span class="text-primary-600">wowtheme7</span></p>
-        </div>
+        <!-- <div class="col-auto">
+      <p class="mb-0">Made by <span class="text-primary-600">wowtheme7</span></p>
+    </div> -->
       </div>
     </footer>
   </main>

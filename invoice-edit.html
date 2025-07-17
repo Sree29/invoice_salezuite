@@ -5,8 +5,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <title>Invoice</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" sizes="16x16"> -->
   <title>Invoice</title>
-  <link rel="icon" type="image/png" href="assets/images/favicon.png" sizes="16x16">
+<link rel="icon" type="image/png" href="assets/images/logo.png" sizes="50x50">
+
   <!-- remix icon font css  -->
   <link rel="stylesheet" href="assets/css/remixicon.css">
   <!-- BootStrap css -->
@@ -38,70 +41,76 @@
   <!-- main css -->
   <link rel="stylesheet" href="assets/css/style.css">
 
-<style>
+  <style>
+    /* Default (light mode) */
+    .sidebar-menu li>a {
+      transition: all 0.2s ease;
+      color: #333;
+      /* dark gray text */
+    }
 
-/* Default (light mode) */
-.sidebar-menu li > a {
-  transition: all 0.2s ease;
-  color: #333; /* dark gray text */
-}
+    .sidebar-menu li>a:hover {
+      color: #089404;
+      /* green on hover */
+    }
 
-.sidebar-menu li > a:hover {
-  color: #089404; /* green on hover */
-}
+    .sidebar-menu li>a.active-page {
+      background-color: #089404;
+      color: #fff;
+    }
 
-.sidebar-menu li > a.active-page {
-  background-color: #089404;
-  color: #fff;
-}
+    .sidebar-menu li>a.active-page:hover {
+      color: #fff;
+    }
 
-.sidebar-menu li > a.active-page:hover {
-  color: #fff;
-}
+    /* Dark mode adjustments */
+    [data-theme="dark"] .sidebar-menu li>a {
+      color: #ccc;
+      /* light gray for better contrast */
+    }
 
-/* Dark mode adjustments */
-[data-theme="dark"] .sidebar-menu li > a {
-  color: #ccc; /* light gray for better contrast */
-}
+    [data-theme="dark"] .sidebar-menu li>a:hover {
+      color: #9fff9f;
+      /* soft green on hover in dark mode */
+    }
 
-[data-theme="dark"] .sidebar-menu li > a:hover {
-  color: #9fff9f; /* soft green on hover in dark mode */
-}
+    [data-theme="dark"] .sidebar-menu li>a.active-page {
+      background-color: #089404;
+      color: #fff;
+    }
 
-[data-theme="dark"] .sidebar-menu li > a.active-page {
-  background-color: #089404;
-  color: #fff;
-}
-
-[data-theme="dark"] .sidebar-menu li > a.active-page:hover {
-  color: #fff;
-}
+    [data-theme="dark"] .sidebar-menu li>a.active-page:hover {
+      color: #fff;
+    }
 
 
-  /* When in light mode, apply soft green background */
-  html[data-theme="light"] body {
-    background-color: #e5fae5;
-  }
-html[data-theme="light"] .navbar-search input {
-  background-color: #e5fae5;
-}
-html[data-theme="light"] [data-theme-toggle] {
-  background-color: #e5fae5 !important;
-}
+    /* When in light mode, apply soft green background */
+    html[data-theme="light"] body {
+      background-color: #e5fae5;
+    }
 
-  /* When in dark mode, use dark background */
-  html[data-theme="dark"] body {
-    background-color: #121212;
-  }
-  .sidebar-menu .sidebar-submenu li.active-page > a {
-  color: #000; /* black */
-}
+    html[data-theme="light"] .navbar-search input {
+      background-color: #e5fae5;
+    }
 
-</style>
+    html[data-theme="light"] [data-theme-toggle] {
+      background-color: #e5fae5 !important;
+    }
+
+    /* When in dark mode, use dark background */
+    html[data-theme="dark"] body {
+      background-color: #121212;
+    }
+
+    .sidebar-menu .sidebar-submenu li.active-page>a {
+      color: #000;
+      /* black */
+    }
+  </style>
 
 </head>
 
- <body>
+<body>
   <aside class="sidebar">
     <button type="button" class="sidebar-close-btn">
       <iconify-icon icon="radix-icons:cross-2"></iconify-icon>
@@ -142,6 +151,18 @@ html[data-theme="light"] [data-theme-toggle] {
         </ul> -->
         </li>
         <li>
+          <a href="invoice-list.html">
+            <iconify-icon icon="mdi:file-document-outline" class="menu-icon"></iconify-icon>
+            <span>Manage Invoice</span>
+          </a>
+        </li>
+        <li>
+          <a href="invoice-add.html">
+            <iconify-icon icon="mdi:file-plus-outline" class="menu-icon"></iconify-icon>
+            <span>Create Invoice</span>
+          </a>
+        </li>
+        <li>
           <a href="Service.html">
             <iconify-icon icon="mdi:application-cog-outline" class="menu-icon"></iconify-icon>
             <span>Services</span>
@@ -153,8 +174,10 @@ html[data-theme="light"] [data-theme-toggle] {
             <span>Customers</span>
           </a>
         </li>
+
+     
         <!-- <li class="sidebar-menu-group-title">Application</li> -->
-<!-- 
+        <!-- 
         <li>
           <a href="calendar-main.html">
             <iconify-icon icon="solar:calendar-outline" class="menu-icon"></iconify-icon>
@@ -162,7 +185,7 @@ html[data-theme="light"] [data-theme-toggle] {
           </a>
         </li> -->
 
-        <li class="dropdown">
+        <!-- <li class="dropdown">
           <a href="javascript:void(0)">
             <iconify-icon icon="hugeicons:invoice-03" class="menu-icon"></iconify-icon>
             <span>Invoice</span>
@@ -183,12 +206,12 @@ html[data-theme="light"] [data-theme-toggle] {
               <a href="invoice-edit.html"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Edit</a>
             </li>
           </ul>
-        </li>
+        </li> -->
 
         <!-- <li class="sidebar-menu-group-title">UI Elements</li> -->
 
 
-        <li class="dropdown">
+        <!-- <li class="dropdown">
           <a href="javascript:void(0)">
             <iconify-icon icon="flowbite:users-group-outline" class="menu-icon"></iconify-icon>
             <span>Users</span>
@@ -202,13 +225,13 @@ html[data-theme="light"] [data-theme-toggle] {
             </li>
 
           </ul>
-        </li>
+        </li> -->
 
 
         <!-- 
         <li class="sidebar-menu-group-title">Application</li> -->
 
-        <li class="dropdown">
+        <!-- <li class="dropdown">
           <a href="javascript:void(0)">
             <iconify-icon icon="simple-line-icons:vector" class="menu-icon"></iconify-icon>
             <span>Authentication</span>
@@ -225,7 +248,7 @@ html[data-theme="light"] [data-theme-toggle] {
                 Password</a>
             </li>
           </ul>
-        </li>
+        </li> -->
         <!-- <li>
           <a href="access-denied.html">
             <i class="ri-folder-lock-line text-xl me-14 d-flex w-auto"></i>
@@ -234,8 +257,36 @@ html[data-theme="light"] [data-theme-toggle] {
         </li> -->
 
       </ul>
-    </div>
+   </div>
+      <div class="sidebar-footer mt-auto text-center p-3">
+    <p class="text-muted text-sm mb-0">
+      <a href="https://cognetz.com/" class="text-decoration-underline text-primary fw-medium">
+        <!-- <iconify-icon icon="mdi:lifebuoy" class="me-1"></iconify-icon> -->
+        Need help? Visit support
+      </a>
+    </p>
+  </div>
+
   </aside>
+<style>
+  .sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full height of viewport */
+}
+
+.sidebar-menu-area {
+  flex: 1; /* Take all remaining space */
+  overflow-y: auto; /* Scroll only menu area if too tall */
+}
+
+.sidebar-footer {
+  border-top: 1px solid #e0e0e0; /* optional divider */
+  padding: 12px 16px;
+  text-align: center;
+}
+
+</style>
 
   <main class="dashboard-main">
     <div class="navbar-header">
@@ -249,10 +300,10 @@ html[data-theme="light"] [data-theme-toggle] {
             <button type="button" class="sidebar-mobile-toggle">
               <iconify-icon icon="heroicons:bars-3-solid" class="icon"></iconify-icon>
             </button>
-            <form class="navbar-search">
+            <!-- <form class="navbar-search">
               <input type="text" name="search" placeholder="Search">
               <iconify-icon icon="ion:search-outline" class="icon"></iconify-icon>
-            </form>
+            </form> -->
           </div>
         </div>
         <div class="col-auto">
@@ -593,10 +644,27 @@ html[data-theme="light"] [data-theme-toggle] {
             Notification dropdown end -->
 
             <div class="dropdown">
-              <button class="d-flex justify-content-center align-items-center rounded-circle" type="button"
+              <!-- <button class="d-flex justify-content-center align-items-center rounded-circle" type="button"
                 data-bs-toggle="dropdown">
                 <img src="assets/images/user.png" alt="image" class="w-40-px h-40-px object-fit-cover rounded-circle">
-              </button>
+              </button> -->
+                      <button id="companyAvatar"
+              class="d-flex justify-content-center align-items-center rounded-circle text-white fw-bold border-0"
+              type="button" data-bs-toggle="dropdown"
+              style="width: 40px; height: 40px; font-size: 16px; background-color: #089404;"></button>
+
+            </button>
+            <script>
+              document.addEventListener("DOMContentLoaded", function () {
+                const avatar = document.getElementById("companyAvatar");
+                const companyName = localStorage.getItem("companyName");
+                if (avatar && companyName) {
+                  avatar.innerText = companyName.charAt(0).toUpperCase();
+                } else {
+                  avatar.innerText = "T";
+                }
+              });
+            </script>
               <div class="dropdown-menu to-top dropdown-menu-sm">
                 <div
                   class="py-12 px-16 radius-8 bg-primary-50 mb-16 d-flex align-items-center justify-content-between gap-2">
@@ -617,7 +685,7 @@ html[data-theme="light"] [data-theme-toggle] {
 
                   <li>
                     <a class="dropdown-item text-black px-0 py-8 hover-bg-transparent hover-text-danger d-flex align-items-center gap-3"
-                      href="javascript:void(0)">
+                      href="sign-in.html">
                       <iconify-icon icon="lucide:power" class="icon text-xl"></iconify-icon> Log Out</a>
                   </li>
                 </ul>
@@ -630,37 +698,37 @@ html[data-theme="light"] [data-theme-toggle] {
     <div class="dashboard-main-body">
 
       <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-24">
-        <h6 class="fw-semibold mb-0">Invoice List</h6>
+        <h6 class="fw-semibold mb-0">Edit Invoice</h6>
         <ul class="d-flex align-items-center gap-2">
           <li class="fw-medium">
             <!-- <a href="index.html" class="d-flex align-items-center gap-1 hover-text-primary">
               <iconify-icon icon="solar:home-smile-angle-outline" class="icon text-lg"></iconify-icon>
               Dashboard
             </a> -->
-                 <a href="index.html" class="d-flex align-items-center gap-1 hover-text-green">
-  <iconify-icon icon="solar:home-smile-angle-outline" class="icon text-lg"></iconify-icon>
-  Dashboard
-</a>
-<style>
-  /* Target the link and icon when hovering */
-  .hover-text-green:hover {
-    color: #089404 !important;
-  }
+            <a href="index.html" class="d-flex align-items-center gap-1 hover-text-green">
+              <iconify-icon icon="solar:home-smile-angle-outline" class="icon text-lg"></iconify-icon>
+              Dashboard
+            </a>
+            <style>
+              /* Target the link and icon when hovering */
+              .hover-text-green:hover {
+                color: #089404 !important;
+              }
 
-  .hover-text-green:hover iconify-icon {
-    color: #089404 !important;
-  }
+              .hover-text-green:hover iconify-icon {
+                color: #089404 !important;
+              }
 
-  /* Optional: keep default state black/gray */
-  .hover-text-green {
-    color: inherit;
-    transition: color 0.2s ease;
-  }
+              /* Optional: keep default state black/gray */
+              .hover-text-green {
+                color: inherit;
+                transition: color 0.2s ease;
+              }
 
-  .hover-text-green iconify-icon {
-    transition: color 0.2s ease;
-  }
-</style>
+              .hover-text-green iconify-icon {
+                transition: color 0.2s ease;
+              }
+            </style>
 
           </li>
           <li>-</li>
@@ -669,14 +737,15 @@ html[data-theme="light"] [data-theme-toggle] {
       </div>
 
       <div class="card">
-        <div class="card-header">
+        <!-- <div class="card-header">
           <div class="d-flex flex-wrap align-items-center justify-content-end gap-2">
-            <button type="button" class="btn btn-sm radius-8 d-inline-flex align-items-center gap-1" style="background-color: #089404; color: #fff;">
+            <button type="button" class="btn btn-sm radius-8 d-inline-flex align-items-center gap-1"
+              style="background-color: #089404; color: #fff;">
               <iconify-icon icon="simple-line-icons:check" class="text-xl"></iconify-icon>
               Save
             </button>
           </div>
-        </div>
+        </div> -->
         <div class="card-body py-40">
           <div class="row justify-content-center" id="invoice">
             <div class="col-lg-12">
@@ -686,10 +755,10 @@ html[data-theme="light"] [data-theme-toggle] {
                     <div class="col-sm-4">
                       <h3 class="text-xl">Invoice #3492</h3>
                       <p class="mb-1 text-sm">Date Issued: <span
-                          class="editable text-decoration-underline">25/08/2020</span> <span
+                          class="editable text-decoration-underline">10/07/2025</span> <span
                           class="text-success-main"><iconify-icon icon="mage:edit"></iconify-icon></span></p>
                       <p class="mb-0 text-sm">Date Due: <span
-                          class="editable text-decoration-underline">29/08/2020</span> <span
+                          class="editable text-decoration-underline">15/07/12025</span> <span
                           class="text-success-main"><iconify-icon icon="mage:edit"></iconify-icon></span></p>
                     </div>
                     <div class="col-sm-4">
@@ -708,20 +777,21 @@ html[data-theme="light"] [data-theme-toggle] {
                         <tbody>
                           <tr>
                             <td>Name</td>
-                            <td class="ps-8">: <span class="editable text-decoration-underline">Will Marthas</span>
+                            <td class="ps-8">: <span class="editable text-decoration-underline">Enter Name</span>
                               <span class="text-success-main"><iconify-icon icon="mage:edit"></iconify-icon></span>
                             </td>
                           </tr>
                           <tr>
                             <td>Address</td>
-                            <td class="ps-8">: <span class="editable text-decoration-underline">4517 Washington
-                                Ave.USA</span> <span class="text-success-main"><iconify-icon
-                                  icon="mage:edit"></iconify-icon></span></td>
+                            <td class="ps-8">: <span class="editable text-decoration-underline">Enter Address</span>
+                              <span class="text-success-main"><iconify-icon icon="mage:edit"></iconify-icon></span>
+                            </td>
                           </tr>
                           <tr>
                             <td>Phone number</td>
-                            <td class="ps-8">: <span class="editable text-decoration-underline">+1 543 2198</span> <span
-                                class="text-success-main"><iconify-icon icon="mage:edit"></iconify-icon></span></td>
+                            <td class="ps-8">: <span class="editable text-decoration-underline">Enter Phone
+                                Number</span> <span class="text-success-main"><iconify-icon
+                                  icon="mage:edit"></iconify-icon></span></td>
                           </tr>
                         </tbody>
                       </table>
@@ -823,21 +893,19 @@ html[data-theme="light"] [data-theme-toggle] {
 
                     <div>
                       <button type="button" id="addRow"
-                        class="btn btn-sm radius-8 d-inline-flex align-items-center gap-1" style="background-color: #089404; color: #fff;">
+                        class="btn btn-sm radius-8 d-inline-flex align-items-center gap-1"
+                        style="background-color: #089404; color: #fff;">
                         <iconify-icon icon="simple-line-icons:plus" class="text-xl"></iconify-icon>
                         Add New
                       </button>
                     </div>
-                    <script>
-                      // Add New Row
-                      document.getElementById("addRow").addEventListener("click", function () {
-                        const tbody = document.querySelector("#invoice-table tbody");
-                        const newRow = document.createElement("tr");
+                   <script>
+  document.getElementById("addRow").addEventListener("click", function () {
+    const tbody = document.querySelector("#invoice-table tbody");
+    const newRow = document.createElement("tr");
+    const rowNumber = tbody.rows.length + 1;
 
-                        // Get new row number
-                        const rowNumber = tbody.rows.length + 1;
-
-                        newRow.innerHTML = `
+    newRow.innerHTML = `
       <td>${String(rowNumber).padStart(2, '0')}</td>
       <td class="editable">New Item</td>
       <td class="editable">1</td>
@@ -850,118 +918,156 @@ html[data-theme="light"] [data-theme-toggle] {
         </button>
       </td>
     `;
-                        tbody.appendChild(newRow);
-                        recalculateTotal();
-                      });
+    tbody.appendChild(newRow);
+    recalculateTotal();
+  });
 
-                      // Make table cells editable on click
-                      document.addEventListener("click", function (e) {
-                        if (e.target.classList.contains("editable")) {
-                          const cell = e.target;
-                          const currentValue = cell.innerText.trim();
+  document.addEventListener("click", function (e) {
+    const target = e.target;
 
-                          const input = document.createElement("input");
-                          input.type = "text";
-                          input.value = currentValue.replace('₹', ''); // remove ₹ for editing
-                          input.className = "form-control form-control-sm";
-                          input.style.width = "100%";
+    // Editable cell logic
+    if (target.classList.contains("editable")) {
+      const cell = target;
+      const currentValue = cell.innerText.trim();
+      const input = document.createElement("input");
 
-                          cell.innerText = '';
-                          cell.appendChild(input);
-                          input.focus();
+      input.type = "text";
+      input.value = currentValue.replace('₹', '');
+      input.className = "form-control form-control-sm no-outline";
+      input.style.width = "100%";
 
-                          input.addEventListener("blur", function () {
-                            let newValue = input.value.trim();
-                            if (cell.cellIndex === 4) { // unit price column
-                              newValue = `₹${parseFloat(newValue || 0).toFixed(2)}`;
-                            }
-                            cell.innerText = newValue || currentValue; // fallback if empty
-                            recalculateTotal();
-                          });
+      cell.innerText = '';
+      cell.appendChild(input);
+      input.focus();
 
-                          input.addEventListener("keydown", function (event) {
-                            if (event.key === "Enter") {
-                              input.blur();
-                            }
-                          });
-                        }
-                      });
+      input.addEventListener("blur", function () {
+        let newValue = input.value.trim();
+        if (cell.cellIndex === 4) {
+          newValue = `₹${parseFloat(newValue || 0).toFixed(2)}`;
+        }
+        cell.innerText = newValue || currentValue;
+        recalculateTotal();
+      });
 
-                      // Make Discount & Tax editable on click
-                      document.addEventListener("click", function (e) {
-                        if (e.target.id === "discount" || e.target.id === "tax") {
-                          const cell = e.target;
-                          const currentValue = cell.innerText.trim().replace('₹', '');
+      input.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") input.blur();
+      });
+    }
 
-                          const input = document.createElement("input");
-                          input.type = "number";
-                          input.value = currentValue;
-                          input.className = "form-control form-control-sm";
-                          input.style.width = "80px";
+    // Remove row logic
+    if (target.closest(".remove-row")) {
+      target.closest("tr").remove();
+      recalculateTotal();
+    }
 
-                          cell.innerText = '';
-                          cell.appendChild(input);
-                          input.focus();
+    // Editable Discount or Tax
+    if (target.id === "discount" || target.id === "tax") {
+      const cell = target;
+      const currentValue = cell.innerText.replace('%', '').trim();
+      const input = document.createElement("input");
 
-                          input.addEventListener("blur", function () {
-                            let newValue = parseFloat(input.value || 0).toFixed(2);
-                            cell.innerText = `₹${newValue}`; // Always add ₹ back
-                            recalculateTotal();
-                          });
+      input.type = "number";
+      input.value = currentValue;
+      input.className = "form-control form-control-sm no-outline";
+      input.style.width = "80px";
 
-                          input.addEventListener("keydown", function (event) {
-                            if (event.key === "Enter") {
-                              input.blur();
-                            }
-                          });
-                        }
-                      });
+      cell.innerText = '';
+      cell.appendChild(input);
+      input.focus();
 
-                      // Remove Row
-                      document.addEventListener("click", function (e) {
-                        if (e.target.closest(".remove-row")) {
-                          e.target.closest("tr").remove();
-                          recalculateTotal();
-                        }
-                      });
+      input.addEventListener("blur", function () {
+        const newValue = parseFloat(input.value || 0).toFixed(2);
+        cell.innerText = `${newValue}%`;
+        recalculateTotal();
+      });
 
-                      function recalculateTotal() {
-                        let subtotal = 0;
+      input.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") input.blur();
+      });
+    }
 
-                        document.querySelectorAll("#invoice-table tbody tr").forEach(row => {
-                          let qty = parseFloat(row.cells[2]?.innerText || 0);
-                          let unitPrice = parseFloat(row.cells[4]?.innerText.replace('₹', '') || 0);
+    // Editable Amount Paid
+    if (target.id === "amountPaid" || target.closest("#amountPaid")) {
+      const cell = document.getElementById("amountPaid");
+      const currentValue = cell.innerText.replace(/[₹,]/g, '').trim();
+      const input = document.createElement("input");
 
-                          subtotal += qty * unitPrice;
+      input.type = "number";
+      input.value = parseFloat(currentValue) || 0;
+      input.className = "form-control form-control-sm no-outline";
+      input.style.width = "120px";
 
-                          // Update price cell
-                          row.cells[5].innerText = `₹${(qty * unitPrice).toFixed(2)}`;
-                        });
+      cell.innerText = '';
+      cell.appendChild(input);
+      input.focus();
 
-                        const discountText = document.getElementById("discount")?.innerText || "₹0.00";
-                        const taxText = document.getElementById("tax")?.innerText || "₹0.00";
+      input.addEventListener("blur", function () {
+        const paid = parseFloat(input.value) || 0;
+        cell.innerText = `₹${paid.toFixed(2)}`;
+        recalculateTotal();
+      });
 
-                        const discount = parseFloat(discountText.replace('₹', '') || 0);
-                        const tax = parseFloat(taxText.replace('₹', '') || 0);
+      input.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") input.blur();
+      });
+    }
+  });
 
-                        const total = subtotal - discount + tax;
+  function recalculateTotal() {
+    let subtotal = 0;
 
-                        document.getElementById("subtotal").innerText = `₹${subtotal.toFixed(2)}`;
-                        document.getElementById("total").innerText = `₹${total.toFixed(2)}`;
+    // Loop through each row
+    document.querySelectorAll("#invoice-table tbody tr").forEach(row => {
+      const qty = parseFloat(row.cells[2]?.innerText || 0);
+      const price = parseFloat(row.cells[4]?.innerText.replace('₹', '') || 0);
+      const total = qty * price;
+      subtotal += total;
+      row.cells[5].innerText = `₹${total.toFixed(2)}`;
+    });
+
+    const discountPercent = parseFloat(document.getElementById("discount")?.innerText.replace('%', '') || 0);
+    const taxPercent = parseFloat(document.getElementById("tax")?.innerText.replace('%', '') || 0);
+
+    const discountAmount = subtotal * (discountPercent / 100);
+    const taxAmount = subtotal * (taxPercent / 100);
+    const totalAmount = subtotal - discountAmount + taxAmount;
+
+    const paidText = document.getElementById("amountPaid")?.innerText.replace(/[₹,]/g, '') || '0';
+    const paid = parseFloat(paidText);
+    const balance = totalAmount - paid;
+
+    // Update values
+    document.getElementById("subtotal").innerText = `₹${subtotal.toFixed(2)}`;
+    document.getElementById("total").innerText = `₹${totalAmount.toFixed(2)}`;
+    document.getElementById("balance").innerText = `₹${balance.toFixed(2)}`;
+  }
+
+  recalculateTotal();
+</script>
+
+  <style>
+                      .no-outline {
+                        border: none !important;
+                        outline: none !important;
+                        box-shadow: none !important;
+                        background: transparent !important;
+                        padding: 0 !important;
+                        width: 100% !important;
                       }
-
-                      // Initial calculation
-                      recalculateTotal();
-                    </script>
-
-
+                    </style>
 
 
                     <div class="d-flex flex-wrap justify-content-between gap-3 mt-24">
                       <div>
-                        <p class="text-sm mb-0"><span class="text-primary-light fw-semibold">Sales By:</span> Jammal</p>
-                        <p class="text-sm mb-0">Thanks for your business</p>
+
+
+
+                        <label for="terms" class="form-label mt-3 text-sm fw-medium">Terms & Conditions</label>
+                        <textarea id="terms" name="terms" rows="4" class="form-control"
+                          placeholder="Enter terms and conditions here..."></textarea>
                       </div>
+
+
                       <div>
                         <table class="text-sm">
                           <tbody>
@@ -975,16 +1081,20 @@ html[data-theme="light"] [data-theme-toggle] {
                             <tr>
                               <td class="pe-64">Discount:</td>
                               <td class="pe-64">
-                                <span class="editable text-decoration-underline" id="discount">₹0.00</span>
-                                <span class="text-success-main"><iconify-icon icon="mage:edit"></iconify-icon></span>
+                                <span class="editable text-decoration-underline" id="discount">0%</span>
+                                <span class="text-success-main">
+                                  <iconify-icon icon="mage:edit"></iconify-icon>
+                                </span>
                               </td>
                             </tr>
 
                             <tr>
                               <td class="pe-64">Tax:</td>
                               <td class="pe-64">
-                                <span class="editable text-decoration-underline" id="tax">₹0.00</span>
-                                <span class="text-success-main"><iconify-icon icon="mage:edit"></iconify-icon></span>
+                                <span class="editable text-decoration-underline" id="tax">0%</span>
+                                <span class="text-success-main">
+                                  <iconify-icon icon="mage:edit"></iconify-icon>
+                                </span>
                               </td>
                             </tr>
 
@@ -993,10 +1103,24 @@ html[data-theme="light"] [data-theme-toggle] {
                                 <span class="text-primary-light fw-semibold">Total:</span>
                               </td>
                               <td class="pe-16 pt-4">
-                                <span class="text-primary-light fw-semibold" id="total">₹4000</span>
+                                <span class="text-primary-light fw-semibold" id="total">₹4000.00</span>
                               </td>
                             </tr>
-
+                           <tr>
+                              <td class="pe-64">Amount Paid:</td>
+                              <td class="pe-64">
+                                <span class="editable text-decoration-underline" id="amountPaid">₹1000.00</span>
+                                <span class="text-success-main"><iconify-icon icon="mage:edit"></iconify-icon></span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="pe-64 pt-4">
+                                <span class="text-primary-light fw-semibold">Balace Amount:</span>
+                              </td>
+                              <td class="pe-16 pt-4">
+                                <span class="text-primary-light fw-semibold" id="balance">₹3000.00</span>
+                              </td>
+                            </tr>
                             <!-- <tr>
                               <td class="pe-64">Discount:</td>
                               <td class="pe-16">
@@ -1024,6 +1148,15 @@ html[data-theme="light"] [data-theme-toggle] {
                     <div class="text-sm border-top d-inline-block px-12">Signature of Customer</div>
                     <div class="text-sm border-top d-inline-block px-12">Signature of Authorized</div>
                   </div>
+                  <div class="d-flex justify-content-end gap-2 mt-32">
+                   
+                    <!-- Save Button -->
+                    <button type="button" class="btn btn-sm radius-8 d-inline-flex align-items-center gap-1"
+                      style="background-color: #089404; color: #fff;">
+                      <iconify-icon icon="simple-line-icons:check" class="text-xl"></iconify-icon>
+                      Save
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1037,9 +1170,10 @@ html[data-theme="light"] [data-theme-toggle] {
     <footer class="d-footer">
       <div class="row align-items-center justify-content-between">
         <div class="col-auto">
-        <p class="mb-0">
-  © 2025 <a href="https://cognetz.com/" target="_blank" class="text-decoration-none" style="color: inherit;">Cognetz</a>. All Rights Reserved.
-</p>
+          <p class="mb-0">
+            © 2025 <a href="https://cognetz.com/" target="_blank" class="text-decoration-none"
+              style="color: inherit;">Cognetz</a>. All Rights Reserved.
+          </p>
 
         </div>
         <!-- <div class="col-auto">

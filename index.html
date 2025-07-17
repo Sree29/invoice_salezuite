@@ -6,7 +6,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Invoice</title>
-  <link rel="icon" type="image/png" href="assets/images/favicon.png" sizes="16x16">
+  <!-- <link rel="icon" type="image/png" href="assets/images/favicon.png" sizes="16x16"> -->
+  <link rel="icon" type="image/png" href="assets/images/logo.png" sizes="50x50">
   <!-- remix icon font css  -->
   <link rel="stylesheet" href="assets/css/remixicon.css">
   <!-- BootStrap css -->
@@ -38,73 +39,78 @@
   <!-- main css -->
   <link rel="stylesheet" href="assets/css/style.css">
 
-<style>
+  <style>
+    /* Default (light mode) */
+    .sidebar-menu li>a {
+      transition: all 0.2s ease;
+      color: #333;
+      /* dark gray text */
+    }
 
-/* Default (light mode) */
-.sidebar-menu li > a {
-  transition: all 0.2s ease;
-  color: #333; /* dark gray text */
-}
+    .sidebar-menu li>a:hover {
+      color: #089404;
+      /* green on hover */
+    }
 
-.sidebar-menu li > a:hover {
-  color: #089404; /* green on hover */
-}
+    .sidebar-menu li>a.active-page {
+      background-color: #089404;
+      color: #fff;
+    }
 
-.sidebar-menu li > a.active-page {
-  background-color: #089404;
-  color: #fff;
-}
+    .sidebar-menu li>a.active-page:hover {
+      color: #fff;
+    }
 
-.sidebar-menu li > a.active-page:hover {
-  color: #fff;
-}
+    /* Dark mode adjustments */
+    [data-theme="dark"] .sidebar-menu li>a {
+      color: #ccc;
+      /* light gray for better contrast */
+    }
 
-/* Dark mode adjustments */
-[data-theme="dark"] .sidebar-menu li > a {
-  color: #ccc; /* light gray for better contrast */
-}
+    [data-theme="dark"] .sidebar-menu li>a:hover {
+      color: #9fff9f;
+      /* soft green on hover in dark mode */
+    }
 
-[data-theme="dark"] .sidebar-menu li > a:hover {
-  color: #9fff9f; /* soft green on hover in dark mode */
-}
+    [data-theme="dark"] .sidebar-menu li>a.active-page {
+      background-color: #089404;
+      color: #fff;
+    }
 
-[data-theme="dark"] .sidebar-menu li > a.active-page {
-  background-color: #089404;
-  color: #fff;
-}
-
-[data-theme="dark"] .sidebar-menu li > a.active-page:hover {
-  color: #fff;
-}
+    [data-theme="dark"] .sidebar-menu li>a.active-page:hover {
+      color: #fff;
+    }
 
 
-  /* When in light mode, apply soft green background */
-  html[data-theme="light"] body {
-    background-color: #e5fae5;
-   
+    /* When in light mode, apply soft green background */
+    html[data-theme="light"] body {
+      background-color: #e5fae5;
 
-  }
-html[data-theme="light"] .navbar-search input {
-  background-color: #e5fae5;
-}
-html[data-theme="light"] [data-theme-toggle] {
-  background-color: #e5fae5 !important;
-}
 
-  /* When in dark mode, use dark background */
-  html[data-theme="dark"] body {
-    background-color: #121212;
-  }
+    }
 
-  .sidebar-menu .sidebar-submenu li.active-page > a {
-  color: #000; /* black */
-}
+    html[data-theme="light"] .navbar-search input {
+      background-color: #e5fae5;
+    }
 
-</style>
+    html[data-theme="light"] [data-theme-toggle] {
+      background-color: #e5fae5 !important;
+    }
+
+    /* When in dark mode, use dark background */
+    html[data-theme="dark"] body {
+      background-color: #121212;
+    }
+
+    .sidebar-menu .sidebar-submenu li.active-page>a {
+      color: #000;
+      /* black */
+    }
+  </style>
 
 </head>
 
- <body>
+<body>
   <aside class="sidebar">
     <button type="button" class="sidebar-close-btn">
       <iconify-icon icon="radix-icons:cross-2"></iconify-icon>
@@ -124,26 +130,22 @@ html[data-theme="light"] [data-theme-toggle] {
             <iconify-icon icon="solar:home-smile-angle-outline" class="menu-icon"></iconify-icon>
             <span>Dashboard</span>
           </a>
-          <!-- <ul class="sidebar-submenu">
-         
-          <li>
-            <a href="index-2.html"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> CRM</a>
-          </li>
-          <li>
-          <a href="Service.html">
-            <iconify-icon icon="solar:calendar-outline" class="menu-icon"></iconify-icon>
-            <span>Services</span>
+        
+        </li>
+        <li>
+          <a href="invoice-list.html">
+            <iconify-icon icon="mdi:file-document-outline" class="menu-icon"></iconify-icon>
+            <span>Manage Invoice</span>
           </a>
         </li>
-         <li>
-          <a href="Customers.html">
-            <iconify-icon icon="solar:calendar-outline" class="menu-icon"></iconify-icon>
-            <span>Customerss</span>
+        <li>
+          <a href="invoice-add.html">
+            <iconify-icon icon="mdi:file-plus-outline" class="menu-icon"></iconify-icon>
+            <span>Create Invoice</span>
           </a>
         </li>
-         
-        </ul> -->
-        </li>
+
+
         <li>
           <a href="Service.html">
             <iconify-icon icon="mdi:application-cog-outline" class="menu-icon"></iconify-icon>
@@ -156,90 +158,41 @@ html[data-theme="light"] [data-theme-toggle] {
             <span>Customers</span>
           </a>
         </li>
-        <!-- <li class="sidebar-menu-group-title">Application</li> -->
-<!-- 
-        <li>
-          <a href="calendar-main.html">
-            <iconify-icon icon="solar:calendar-outline" class="menu-icon"></iconify-icon>
-            <span>Calendar</span>
-          </a>
-        </li> -->
-
-        <li class="dropdown">
-          <a href="javascript:void(0)">
-            <iconify-icon icon="hugeicons:invoice-03" class="menu-icon"></iconify-icon>
-            <span>Invoice</span>
-          </a>
-          <ul class="sidebar-submenu">
-            <li>
-              <a href="invoice-list.html"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i>Manage
-                Invoice</a>
-            </li>
-            <li>
-              <a href="invoice-preview.html"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i>
-                Preview</a>
-            </li>
-            <li>
-              <a href="invoice-add.html"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Add new</a>
-            </li>
-            <li>
-              <a href="invoice-edit.html"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Edit</a>
-            </li>
-          </ul>
-        </li>
-
-        <!-- <li class="sidebar-menu-group-title">UI Elements</li> -->
-
-
-        <li class="dropdown">
-          <a href="javascript:void(0)">
-            <iconify-icon icon="flowbite:users-group-outline" class="menu-icon"></iconify-icon>
-            <span>Users</span>
-          </a>
-          <ul class="sidebar-submenu">
-
-
-            <li>
-              <a href="profile.html"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i>
-                Profile</a>
-            </li>
-
-          </ul>
-        </li>
-
-
-        <!-- 
-        <li class="sidebar-menu-group-title">Application</li> -->
-
-        <li class="dropdown">
-          <a href="javascript:void(0)">
-            <iconify-icon icon="simple-line-icons:vector" class="menu-icon"></iconify-icon>
-            <span>Authentication</span>
-          </a>
-          <ul class="sidebar-submenu">
-            <li>
-              <a href="sign-in.html"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Sign In</a>
-            </li>
-            <li>
-              <a href="sign-up.html"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Sign Up</a>
-            </li>
-            <li>
-              <a href="forgot-password.html"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Forgot
-                Password</a>
-            </li>
-          </ul>
-        </li>
-        <!-- <li>
-          <a href="access-denied.html">
-            <i class="ri-folder-lock-line text-xl me-14 d-flex w-auto"></i>
-            <span>Access Denied</span>
-          </a>
-        </li> -->
+       
 
       </ul>
-    </div>
-  </aside>
 
+
+    </div>
+     <div class="sidebar-footer mt-auto text-center p-3">
+    <p class="text-muted text-sm mb-0">
+      <a href="https://cognetz.com/" class="text-decoration-underline text-primary fw-medium">
+        <!-- <iconify-icon icon="mdi:lifebuoy" class="me-1"></iconify-icon> -->
+        Need help? Visit support
+      </a>
+    </p>
+  </div>
+
+  </aside>
+<style>
+  .sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full height of viewport */
+}
+
+.sidebar-menu-area {
+  flex: 1; /* Take all remaining space */
+  overflow-y: auto; /* Scroll only menu area if too tall */
+}
+
+.sidebar-footer {
+  border-top: 1px solid #e0e0e0; /* optional divider */
+  padding: 12px 16px;
+  text-align: center;
+}
+
+</style>
   <main class="dashboard-main">
     <div class="navbar-header">
       <div class="row align-items-center justify-content-between">
@@ -252,10 +205,10 @@ html[data-theme="light"] [data-theme-toggle] {
             <button type="button" class="sidebar-mobile-toggle">
               <iconify-icon icon="heroicons:bars-3-solid" class="icon"></iconify-icon>
             </button>
-            <form class="navbar-search">
+            <!-- <form class="navbar-search">
               <input type="text" name="search" placeholder="Search">
               <iconify-icon icon="ion:search-outline" class="icon"></iconify-icon>
-            </form>
+            </form> -->
           </div>
         </div>
         <div class="col-auto">
@@ -595,62 +548,76 @@ html[data-theme="light"] [data-theme-toggle] {
             </div>
             Notification dropdown end -->
 
-            <div class="dropdown">
-              <button class="d-flex justify-content-center align-items-center rounded-circle" type="button"
-                data-bs-toggle="dropdown">
-                <img src="assets/images/user.png" alt="image" class="w-40-px h-40-px object-fit-cover rounded-circle">
-              </button>
-              <div class="dropdown-menu to-top dropdown-menu-sm">
-                <div
-                  class="py-12 px-16 radius-8 bg-primary-50 mb-16 d-flex align-items-center justify-content-between gap-2">
-                  <div>
-                    <h6 class="text-lg text-primary-light fw-semibold mb-2">Shaidul Islam</h6>
-                    <span class="text-secondary-light fw-medium text-sm">Admin</span>
-                  </div>
-                  <button type="button" class="hover-text-danger">
-                    <iconify-icon icon="radix-icons:cross-1" class="icon text-xl"></iconify-icon>
-                  </button>
-                </div>
-                <ul class="to-top-list">
-                  <li>
-                    <a class="dropdown-item text-black px-0 py-8 hover-bg-transparent hover-text-primary d-flex align-items-center gap-3"
-                      href="profile.html">
-                      <iconify-icon icon="solar:user-linear" class="icon text-xl"></iconify-icon> My Profile</a>
-                  </li>
+            <!-- <button id="companyAvatar"
+  class="d-flex justify-content-center align-items-center rounded-circle text-white fw-bold border-0"
+  type="button"
+  style="width: 40px; height: 40px; font-size: 16px; background-color: #089404;">
+</button>  -->
+            <button id="companyAvatar"
+              class="d-flex justify-content-center align-items-center rounded-circle text-white fw-bold border-0"
+              type="button" data-bs-toggle="dropdown"
+              style="width: 40px; height: 40px; font-size: 16px; background-color: #089404;"></button>
 
-                  <li>
-                    <a class="dropdown-item text-black px-0 py-8 hover-bg-transparent hover-text-danger d-flex align-items-center gap-3"
-                      href="javascript:void(0)">
-                      <iconify-icon icon="lucide:power" class="icon text-xl"></iconify-icon> Log Out</a>
-                  </li>
-                </ul>
+            </button>
+            <script>
+              document.addEventListener("DOMContentLoaded", function () {
+                const avatar = document.getElementById("companyAvatar");
+                const companyName = localStorage.getItem("companyName");
+                if (avatar && companyName) {
+                  avatar.innerText = companyName.charAt(0).toUpperCase();
+                } else {
+                  avatar.innerText = "T";
+                }
+              });
+            </script>
+
+            <div class="dropdown-menu to-top dropdown-menu-sm">
+              <div
+                class="py-12 px-16 radius-8 bg-primary-50 mb-16 d-flex align-items-center justify-content-between gap-2">
+                <div>
+                  <h6 class="text-lg text-primary-light fw-semibold mb-2">Shaidul Islam</h6>
+                  <span class="text-secondary-light fw-medium text-sm">Admin</span>
+                </div>
+                <button type="button" class="hover-text-danger">
+                  <iconify-icon icon="radix-icons:cross-1" class="icon text-xl"></iconify-icon>
+                </button>
               </div>
-            </div><!-- Profile dropdown end -->
-          </div>
+              <ul class="to-top-list">
+                <li>
+                  <a class="dropdown-item text-black px-0 py-8 hover-bg-transparent hover-text-primary d-flex align-items-center gap-3"
+                    href="profile.html">
+                    <iconify-icon icon="solar:user-linear" class="icon text-xl"></iconify-icon> My Profile</a>
+                </li>
+
+                <li>
+                  <a class="dropdown-item text-black px-0 py-8 hover-bg-transparent hover-text-danger d-flex align-items-center gap-3"
+                    href="sign-in.html">
+                    <iconify-icon icon="lucide:power" class="icon text-xl"></iconify-icon> Log Out</a>
+                </li>
+              </ul>
+            </div>
+          </div><!-- Profile dropdown end -->
         </div>
       </div>
+    </div>
     </div>
     <div class="dashboard-main-body">
 
       <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-24">
         <h6 class="fw-semibold mb-0">Dashboard</h6>
-        <!-- <ul class="d-flex align-items-center gap-2">
-          <li class="fw-medium">
-            <a href="index.html" class="d-flex align-items-center gap-1 hover-text-primary">
-              <iconify-icon icon="solar:home-smile-angle-outline" class="icon text-lg"></iconify-icon>
-              Dashboard
-            </a>
-          </li>
-
-          <li class="fw-medium">CRM</li>
-        </ul> -->
+        <a href="invoice-add.html" class="btn btn-sm radius-8 d-inline-flex align-items-center gap-1"
+          style="background-color: #089404; color: #fff;">
+          <iconify-icon icon="mdi:file-document-edit-outline" class="text-xl"></iconify-icon>
+          Create Invoice
+        </a>
       </div>
+
 
       <div class="row gy-4">
         <div class="col-xxl-12">
           <div class="row gy-4">
 
-            <div class="col-xxl-4 col-sm-4">
+            <div class="col-xxl-4 col-sm-3">
               <div class="card p-3 shadow-2 radius-8 border input-form-light h-100 bg-gradient-end-1">
                 <div class="card-body p-0">
                   <div class="d-flex flex-wrap align-items-center justify-content-between gap-1 mb-8">
@@ -658,13 +625,15 @@ html[data-theme="light"] [data-theme-toggle] {
                     <div class="d-flex align-items-center gap-2">
                       <span
                         class="mb-0 w-48-px h-48-px bg-primary-600 flex-shrink-0 text-white d-flex justify-content-center align-items-center rounded-circle h6 mb-0">
-                        <iconify-icon icon="mdi:currency-usd" class="icon"></iconify-icon>
+                        <iconify-icon icon="mdi:currency-inr" class="icon"></iconify-icon>
                       </span>
                       <div>
                         <span class="mb-2 fw-medium text-secondary-light text-sm">Total Amount</span>
-                        <h6 class="fw-semibold">15,000</h6>
+                        <h6 class="fw-semibold mb-0">15,000</h6>
+                        <small class="text-muted d-block">This Month: ₹12,000</small>
                       </div>
                     </div>
+
 
                     <!-- <div id="new-user-chart" class="remove-tooltip-title rounded-tooltip-value"></div> -->
                   </div>
@@ -675,7 +644,7 @@ html[data-theme="light"] [data-theme-toggle] {
               </div>
             </div>
 
-            <div class="col-xxl-4 col-sm-4">
+            <div class="col-xxl-4 col-sm-3">
               <div class="card p-3 shadow-2 radius-8 border input-form-light h-100 bg-gradient-end-5">
                 <div class="card-body p-0">
                   <div class="d-flex flex-wrap align-items-center justify-content-between gap-1 mb-8">
@@ -687,9 +656,11 @@ html[data-theme="light"] [data-theme-toggle] {
                       </span>
                       <div>
                         <span class="mb-2 fw-medium text-secondary-light text-sm">Pending Amount</span>
-                        <h6 class="fw-semibold">250</h6>
+                        <h6 class="fw-semibold mb-0">250</h6>
+                        <small class="text-muted d-block">This Month: 80</small>
                       </div>
                     </div>
+
 
                     <!-- <div id="leads-chart" class="remove-tooltip-title rounded-tooltip-value"></div> -->
                   </div>
@@ -700,11 +671,10 @@ html[data-theme="light"] [data-theme-toggle] {
               </div>
             </div>
 
-            <div class="col-xxl-4 col-sm-4">
+            <div class="col-xxl-4 col-sm-3">
               <div class="card p-3 shadow-2 radius-8 border input-form-light h-100 bg-gradient-end-6">
                 <div class="card-body p-0">
                   <div class="d-flex flex-wrap align-items-center justify-content-between gap-1 mb-8">
-
                     <div class="d-flex align-items-center gap-2">
                       <span
                         class="mb-0 w-48-px h-48-px bg-cyan text-white flex-shrink-0 d-flex justify-content-center align-items-center rounded-circle h6">
@@ -712,9 +682,12 @@ html[data-theme="light"] [data-theme-toggle] {
                       </span>
                       <div>
                         <span class="mb-2 fw-medium text-secondary-light text-sm">Total Invoice</span>
-                        <h6 class="fw-semibold">500</h6>
+                        <h6 class="fw-semibold mb-0">500</h6>
+                        <small class="text-muted d-block">This Month: 120</small>
                       </div>
                     </div>
+
+
 
                     <!-- <div id="total-profit-chart" class="remove-tooltip-title rounded-tooltip-value"></div> -->
                   </div>
@@ -724,33 +697,37 @@ html[data-theme="light"] [data-theme-toggle] {
                 </div>
               </div>
             </div>
+            <div class="col-xxl-4 col-sm-3">
+              <div class="card p-3 shadow-2 radius-8 border input-form-light h-100 bg-gradient-end-4">
+                <div class="card-body p-0">
+                  <div class="d-flex flex-wrap align-items-center justify-content-between gap-1 mb-8">
 
-          </div>
-        </div>
-        <!-- Revenue Growth start -->
-        <div class="col-xxl-4">
-          <div class="card h-100 radius-8 border">
-            <div class="card-body p-24">
-              <div class="d-flex align-items-center flex-wrap gap-2 justify-content-between">
-                <div>
-                  <h6 class="mb-2 fw-bold text-lg">Invoice Amount</h6>
-                  <span class="text-sm fw-medium text-secondary-light">Monthly Report</span>
-                </div>
-                <div class="text-end">
-                  <h6 class="mb-2 fw-bold text-lg">₹1,20,000</h6>
-                  <span
-                    class="bg-success-focus ps-12 pe-12 pt-2 pb-2 rounded-2 fw-medium text-success-main text-sm">+₹10k
-                    this month</span>
+                    <div class="d-flex align-items-center gap-2">
+                      <span
+                        class="mb-0 w-48-px h-48-px bg-purple text-white flex-shrink-0 d-flex justify-content-center align-items-center rounded-circle h6">
+                        <iconify-icon icon="mdi:account-multiple-outline" class="icon"></iconify-icon>
+
+                      </span>
+                      <div>
+                        <span class="mb-2 fw-medium text-secondary-light text-sm">Total Customers</span>
+                        <h6 class="fw-semibold mb-0">100</h6>
+                        <small class="text-muted d-block">This Month: 20</small>
+                      </div>
+                    </div>
+
+
+
+                  </div>
+
                 </div>
               </div>
-              <div id="revenue-chart" class="mt-28"></div>
             </div>
+
           </div>
         </div>
-        <!-- Revenue Growth End -->
 
         <!-- Earning Static start -->
-        <div class="col-xxl-8">
+        <div class="col-12">
           <div class="card h-100 radius-8 border-0">
             <div class="card-body p-24">
               <div class="d-flex align-items-center flex-wrap gap-2 justify-content-between">
@@ -778,7 +755,7 @@ html[data-theme="light"] [data-theme-toggle] {
                   </span>
                   <div>
                     <span class="text-secondary-light text-sm fw-medium">Sales</span>
-                    <h6 class="text-md fw-semibold mb-0">$200k</h6>
+                    <h6 class="text-md fw-semibold mb-0">₹200k</h6>
                   </div>
                 </div>
 
@@ -790,7 +767,7 @@ html[data-theme="light"] [data-theme-toggle] {
                   </span>
                   <div>
                     <span class="text-secondary-light text-sm fw-medium">Income</span>
-                    <h6 class="text-md fw-semibold mb-0">$200k</h6>
+                    <h6 class="text-md fw-semibold mb-0">₹200k</h6>
                   </div>
                 </div>
 
@@ -802,7 +779,7 @@ html[data-theme="light"] [data-theme-toggle] {
                   </span>
                   <div>
                     <span class="text-secondary-light text-sm fw-medium">Profit</span>
-                    <h6 class="text-md fw-semibold mb-0">$200k</h6>
+                    <h6 class="text-md fw-semibold mb-0">₹200k</h6>
                   </div>
                 </div>
               </div>
@@ -813,45 +790,177 @@ html[data-theme="light"] [data-theme-toggle] {
         </div>
         <!-- Earning Static End -->
 
+        <div class="card-body">
+          <h6 class="fw-semibold mb-16 px-16">Upcoming Due Invoices</h6>
+          <div class="px-16">
+            <table class="table bordered-table mb-0">
+              <thead>
+                <tr>
 
 
-        <!-- Client Payment Status Start -->
-        <!-- <div class="col-xxl-4 col-sm-6">
-          <div class="card h-100 radius-8 border-0">
-            <div class="card-body p-24">
-              <h6 class="mb-2 fw-bold text-lg">Client Payment Status</h6>
-              <span class="text-sm fw-medium text-secondary-light">Weekly Report</span>
+                  <th>ID</th>
+                  <th scope="col">Name</th>
+                  <!-- <th scope="col">Email</th> -->
+                  <th scope="col">Total Amount</th>
+                  <th scope="col">Amount Pending</th>
+                  <th scope="col">Date Issued</th>
+                  <th scope="col">Due Date</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>
+                    <div class="d-flex align-items-center">
+                      <img src="assets/images/user-list/user.png" alt="" class="flex-shrink-0 me-12 radius-8"
+                        style="width: 40px; height: 40px;">
+                      <h6 class="text-md mb-0 fw-medium flex-grow-1">James </h6>
+                    </div>
+                  </td>
 
-              <ul class="d-flex flex-wrap align-items-center justify-content-center mt-32">
-                <li class="d-flex align-items-center gap-2 me-28">
-                  <span class="w-12-px h-12-px rounded-circle bg-success-main"></span>
-                  <span class="text-secondary-light text-sm fw-medium">Paid: 500</span>
-                </li>
-                <li class="d-flex align-items-center gap-2 me-28">
-                  <span class="w-12-px h-12-px rounded-circle bg-info-main"></span>
-                  <span class="text-secondary-light text-sm fw-medium">Pending: 500</span>
-                </li>
-                <li class="d-flex align-items-center gap-2">
-                  <span class="w-12-px h-12-px rounded-circle bg-warning-main"></span>
-                  <span class="text-secondary-light text-sm fw-medium">Overdue: 1500</span>
-                </li>
-              </ul>
-              <div class="mt-40">
-                <div id="paymentStatusChart" class="margin-16-minus"></div>
+                  <td>20000</td>
+                  <td>10000</td>
+                  <td>11/06/2025</td>
+                  <td>16/06/2025</td>
+
+
+                  <td>
+
+
+                    <a href="javascript:void(0)"
+                      class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center"
+                      data-bs-toggle="modal" data-bs-target="#deleteDueInvoiceModal">
+                      <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>
+                    <div class="d-flex align-items-center">
+                      <img src="assets/images/user-list/user.png" alt="" class="flex-shrink-0 me-12 radius-8"
+                        style="width: 40px; height: 40px;">
+                      <h6 class="text-md mb-0 fw-medium flex-grow-1">Kathryn Murphy</h6>
+                    </div>
+                  </td>
+
+                  <td>30000</td>
+                  <td>10000</td>
+                  <td>18/06/2025</td>
+                  <td>28/06/2025</td>
+                  <td>
+
+
+                    <a href="javascript:void(0)"
+                      class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center"
+                      data-bs-toggle="modal" data-bs-target="#deleteDueInvoiceModal">
+                      <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>
+                    <div class="d-flex align-items-center">
+                      <img src="assets/images/user-list/user.png" alt="" class="flex-shrink-0 me-12 radius-8"
+                        style="width: 40px; height: 40px;">
+                      <h6 class="text-md mb-0 fw-medium flex-grow-1">John</h6>
+                    </div>
+                  </td>
+
+                  <td>10000</td>
+                  <td>5000</td>
+                  <td>1/06/2025</td>
+                  <td>12/06/2025</td>
+                  <td>
+
+
+                    <a href="javascript:void(0)"
+                      class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center"
+                      data-bs-toggle="modal" data-bs-target="#deleteDueInvoiceModal">
+                      <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>
+                    <div class="d-flex align-items-center">
+                      <img src="assets/images/user-list/user.png" alt="" class="flex-shrink-0 me-12 radius-8"
+                        style="width: 40px; height: 40px;">
+                      <h6 class="text-md mb-0 fw-medium flex-grow-1">Joseph</h6>
+                    </div>
+                  </td>
+
+                  <td>20000</td>
+                  <td>5000</td>
+                  <td>1/06/2025</td>
+                  <td>17/06/2025</td>
+                  <td>
+
+
+                    <a href="javascript:void(0)"
+                      class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center"
+                      data-bs-toggle="modal" data-bs-target="#deleteDueInvoiceModal">
+                      <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
+                    </a>
+                  </td>
+                </tr>
+
+
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+        <!-- Delete Confirmation Modal -->
+        <div class="modal fade" id="deleteDueInvoiceModal" tabindex="-1" aria-labelledby="deleteDueInvoiceModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-md modal-dialog-centered">
+            <div class="modal-content radius-8">
+
+              <!-- Modal Header with underline -->
+              <div class="modal-header border-0 flex-column align-items-start">
+                <h6 class="modal-title fw-semibold w-100 pb-2 border-bottom" id="deleteDueInvoiceModalLabel">
+                  Delete Invoice
+                </h6>
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+              </div>
+
+              <!-- Left aligned body -->
+              <div class="modal-body text-start">
+                <p class="mb-0">Are you sure you want to delete this Invoice?</p>
+                <input type="hidden" id="deleteCustomerId" name="deleteCustomerId">
+              </div>
+
+              <!-- Buttons aligned right -->
+              <div class="modal-footer border-0 justify-content-end">
+                <button type="button" class="btn btn-secondary radius-8" data-bs-dismiss="modal">Cancel</button>
+                <!-- <button type="submit" class="btn btn-danger radius-8">Delete</button> -->
+                <button type="submit" class="btn btn-danger"
+                  style="padding: 0.5rem 0.5rem; background-color: #dc3545; border-color: #dc3545;">
+                  Delete
+                </button>
+
+
+
               </div>
             </div>
           </div>
-        </div> -->
-        <!-- Client Payment Status End  -->
+        </div>
+
 
       </div>
     </div>
     <footer class="d-footer">
-      <div class="row align-items-center justify-content-between">
+      <div class="row align-items-center justify-c      ontent-between">
         <div class="col-auto">
-         <p class="mb-0">
-  © 2025 <a href="https://cognetz.com/" target="_blank" class="text-decoration-none" style="color: inherit;">Cognetz</a>. All Rights Reserved.
-</p>
+          <p class="mb-0">
+            © 2025 <a href="https://cognetz.com/" target="_blank" class="text-decoration-none"
+              style="color: inherit;">Cognetz</a>. All Rights Reserved.
+          </p>
 
         </div>
         <!-- <div class="col-auto">
