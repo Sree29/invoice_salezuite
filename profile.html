@@ -129,27 +129,20 @@
             <iconify-icon icon="solar:home-smile-angle-outline" class="menu-icon"></iconify-icon>
             <span>Dashboard</span>
           </a>
-          <!-- <ul class="sidebar-submenu">
          
-          <li>
-            <a href="index-2.html"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> CRM</a>
-          </li>
-          <li>
-          <a href="Service.html">
-            <iconify-icon icon="solar:calendar-outline" class="menu-icon"></iconify-icon>
-            <span>Services</span>
+        </li>
+        <li>
+          <a href="quotation-add.html">
+            <iconify-icon icon="mdi:file-cog-outline" class="menu-icon"></iconify-icon>
+            <span>Create Quotation</span>
           </a>
         </li>
          <li>
-          <a href="Customers.html">
-            <iconify-icon icon="solar:calendar-outline" class="menu-icon"></iconify-icon>
-            <span>Customerss</span>
+          <a href="quotation-manage.html">
+            <iconify-icon icon="mdi:file-multiple-outline" class="menu-icon"></iconify-icon>
+            <span>Manage Quotation</span>
           </a>
         </li>
-         
-        </ul> -->
-        </li>
-       
         <li>
           <a href="invoice-add.html">
             <iconify-icon icon="mdi:file-plus-outline" class="menu-icon"></iconify-icon>
@@ -258,19 +251,33 @@
 
       </ul>
   </div>
-       <div class="sidebar-footer mt-auto text-center p-3">
-      <p class="text-muted text-sm mb-0 d-flex justify-content-center align-items-center gap-1">
-        <i class="fas fa-headset text-primary"></i>
-     
-        <button class="btn btn-link text-decoration-underline text-primary fw-medium p-0" data-bs-toggle="modal"
-          data-bs-target="#helpModal">
-          Need help?
-        </button>
-      </p>
+      <div class="sidebar-footer mt-auto text-center p-3 border-top">
+  <div class="d-flex justify-content-center align-items-center gap-2">
+    <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 38px; height: 38px;">
+      <i class="fas fa-headset fs-5"></i>
     </div>
+    <div class="text-start">
+      <button class="btn btn-link p-0 fw-semibold text-primary text-decoration-none hover-underline fs-sm"
+              data-bs-toggle="modal" data-bs-target="#helpModal">
+        Need help?<br>
+        <span class="text-muted small">Contact support</span>
+      </button>
+    </div>
+  </div>
+</div>
+
 
   </aside>
 <style>
+  .hover-underline:hover {
+  text-decoration: underline !important;
+  color: #0d6efd !important;
+}
+
+.fs-sm {
+  font-size: 0.875rem;
+}
+
   .sidebar {
   display: flex;
   flex-direction: column;

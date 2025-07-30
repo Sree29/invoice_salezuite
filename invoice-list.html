@@ -123,27 +123,20 @@ html[data-theme="light"] [data-theme-toggle] {
             <iconify-icon icon="solar:home-smile-angle-outline" class="menu-icon"></iconify-icon>
             <span>Dashboard</span>
           </a>
-          <!-- <ul class="sidebar-submenu">
          
+        </li>
           <li>
-            <a href="index-2.html"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> CRM</a>
-          </li>
-          <li>
-          <a href="Service.html">
-            <iconify-icon icon="solar:calendar-outline" class="menu-icon"></iconify-icon>
-            <span>Services</span>
+          <a href="quotation-add.html">
+            <iconify-icon icon="mdi:file-cog-outline" class="menu-icon"></iconify-icon>
+            <span>Create Quotation</span>
           </a>
         </li>
          <li>
-          <a href="Customers.html">
-            <iconify-icon icon="solar:calendar-outline" class="menu-icon"></iconify-icon>
-            <span>Customerss</span>
+          <a href="quotation-manage.html">
+            <iconify-icon icon="mdi:file-multiple-outline" class="menu-icon"></iconify-icon>
+            <span>Manage Quotation</span>
           </a>
         </li>
-         
-        </ul> -->
-        </li>
-         
 <li>
   <a href="invoice-add.html">
     <iconify-icon icon="mdi:file-plus-outline" class="menu-icon"></iconify-icon>
@@ -251,18 +244,32 @@ html[data-theme="light"] [data-theme-toggle] {
 
       </ul>
     </div>
-     <div class="sidebar-footer mt-auto text-center p-3">
-      <p class="text-muted text-sm mb-0 d-flex justify-content-center align-items-center gap-1">
-        <i class="fas fa-headset text-primary"></i>
-     
-        <button class="btn btn-link text-decoration-underline text-primary fw-medium p-0" data-bs-toggle="modal"
-          data-bs-target="#helpModal">
-          Need help?
-        </button>
-      </p>
+     <div class="sidebar-footer mt-auto text-center p-3 border-top">
+  <div class="d-flex justify-content-center align-items-center gap-2">
+    <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 38px; height: 38px;">
+      <i class="fas fa-headset fs-5"></i>
     </div>
+    <div class="text-start">
+      <button class="btn btn-link p-0 fw-semibold text-primary text-decoration-none hover-underline fs-sm"
+              data-bs-toggle="modal" data-bs-target="#helpModal">
+        Need help?<br>
+        <span class="text-muted small">Contact support</span>
+      </button>
+    </div>
+  </div>
+</div>
+
   </aside>
 <style>
+  .hover-underline:hover {
+  text-decoration: underline !important;
+  color: #0d6efd !important;
+}
+
+.fs-sm {
+  font-size: 0.875rem;
+}
+
   .sidebar {
   display: flex;
   flex-direction: column;
@@ -826,8 +833,35 @@ html[data-theme="light"] [data-theme-toggle] {
               <option>Paid</option>
               <option>Pending</option>
             </select>
-            <a href="invoice-add.html" class="btn btn-sm radius-8" style="background-color: #089404; color: #fff;"><i class="ri-add-line"></i> Create
-              Invoice</a>
+           <a href="invoice-add.html" class="btn btn-sm custom-outline-green d-inline-flex align-items-center gap-1">
+  <i class="ri-add-line"></i> Create Invoice
+</a>
+<style>
+  .custom-outline-green {
+    border: 2px solid #089404;
+    border-radius: 50px;
+    background-color: transparent;
+    color: #089404;
+    padding: 6px 16px;
+    transition: all 0.3s ease;
+  }
+
+  .custom-outline-green i {
+    color: #089404;
+  }
+
+  .custom-outline-green:hover {
+    background-color: #089404;
+    color: #fff;
+  }
+
+  .custom-outline-green:hover i {
+    color: #fff;
+  }
+</style>
+
+
+              
           </div>
         </div>
         <div class="card-body">
@@ -865,7 +899,7 @@ html[data-theme="light"] [data-theme-toggle] {
                   </div>
                 </td>
                 <td>25 Jan 2024</td>
-                <td>$200.00</td>
+                <td>₹200.00</td>
                 <!-- <td> <span
                     class="bg-success-focus text-success-main px-24 py-4 rounded-pill fw-medium text-sm">Paid</span>
                 </td> -->
@@ -908,20 +942,28 @@ html[data-theme="light"] [data-theme-toggle] {
 
 
                 <td>
-                  <a href="invoice-preview.html" target="_blank"
-                    class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center">
-                    <iconify-icon icon="iconamoon:eye-light"></iconify-icon>
-                  </a>
-                  <a href="invoice-edit.html"
-                    class="w-32-px h-32-px bg-success-focus text-success-main rounded-circle d-inline-flex align-items-center justify-content-center">
-                    <iconify-icon icon="lucide:edit"></iconify-icon>
-                  </a>
+                  <!-- Preview -->
+<a href="invoice-preview.html" target="_blank"
+  class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center"
+  title="Preview">
+  <iconify-icon icon="iconamoon:eye-light"></iconify-icon>
+</a>
 
-                  <a href="javascript:void(0)"
-                    class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center"
-                    data-bs-toggle="modal" data-bs-target="#deleteServiceModal">
-                    <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
-                  </a>
+<!-- Edit -->
+<a href="invoice-edit.html"
+  class="w-32-px h-32-px bg-success-focus text-success-main rounded-circle d-inline-flex align-items-center justify-content-center"
+  title="Edit">
+  <iconify-icon icon="lucide:edit"></iconify-icon>
+</a>
+
+<!-- Delete -->
+<a href="javascript:void(0)"
+  class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center"
+  data-bs-toggle="modal" data-bs-target="#deleteServiceModal"
+  title="Delete">
+  <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
+</a>
+
                 </td>
               </tr>
               <tr>
@@ -936,29 +978,34 @@ html[data-theme="light"] [data-theme-toggle] {
                   </div>
                 </td>
                 <td>25 Jan 2024</td>
-                <td>$200.00</td>
+                <td>₹200.00</td>
                 <!-- <td> <span
                     class="bg-success-focus text-success-main px-24 py-4 rounded-pill fw-medium text-sm">Paid</span>
                 </td> -->
                 <td> <span class="bg-success-focus text-success-main px-24 py-4 rounded-pill fw-medium text-sm">Paid</span> </td>
                 <td>
-                  <a href="invoice-preview.html" target="_blank"
-                    class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center">
-                    <iconify-icon icon="iconamoon:eye-light"></iconify-icon>
-                  </a>
-                  <a href="javascript:void(0)"
-                    class="w-32-px h-32-px bg-success-focus text-success-main rounded-circle d-inline-flex align-items-center justify-content-center">
-                    <iconify-icon icon="lucide:edit"></iconify-icon>
-                  </a>
-                  <!-- <a href="javascript:void(0)"
-                    class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center">
-                    <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
-                  </a> -->
-                  <a href="javascript:void(0)"
-                    class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center"
-                    data-bs-toggle="modal" data-bs-target="#deleteServiceModal">
-                    <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
-                  </a>
+                 <!-- Preview -->
+<a href="invoice-preview.html" target="_blank"
+  class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center"
+  title="Preview">
+  <iconify-icon icon="iconamoon:eye-light"></iconify-icon>
+</a>
+
+<!-- Edit -->
+<a href="invoice-edit.html"
+  class="w-32-px h-32-px bg-success-focus text-success-main rounded-circle d-inline-flex align-items-center justify-content-center"
+  title="Edit">
+  <iconify-icon icon="lucide:edit"></iconify-icon>
+</a>
+
+<!-- Delete -->
+<a href="javascript:void(0)"
+  class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center"
+  data-bs-toggle="modal" data-bs-target="#deleteServiceModal"
+  title="Delete">
+  <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
+</a>
+
                 </td>
               </tr>
               <tr>
@@ -973,29 +1020,34 @@ html[data-theme="light"] [data-theme-toggle] {
                   </div>
                 </td>
                 <td>10 Feb 2024</td>
-                <td>$200.00</td>
+                <td>₹200.00</td>
                 <td> <span
                     class="bg-success-focus text-success-main px-24 py-4 rounded-pill fw-medium text-sm">Paid</span>
                 </td>
               
                 <td>
-                  <a href="javascript:void(0)"
-                    class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center">
-                    <iconify-icon icon="iconamoon:eye-light"></iconify-icon>
-                  </a>
-                  <a href="invoice-preview.html" target="_blank"
-                    class="w-32-px h-32-px bg-success-focus text-success-main rounded-circle d-inline-flex align-items-center justify-content-center">
-                    <iconify-icon icon="lucide:edit"></iconify-icon>
-                  </a>
-                  <!-- <a href="javascript:void(0)"
-                    class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center">
-                    <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
-                  </a> -->
-                  <a href="javascript:void(0)"
-                    class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center"
-                    data-bs-toggle="modal" data-bs-target="#deleteServiceModal">
-                    <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
-                  </a>
+                 <!-- Preview -->
+<a href="invoice-preview.html" target="_blank"
+  class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center"
+  title="Preview">
+  <iconify-icon icon="iconamoon:eye-light"></iconify-icon>
+</a>
+
+<!-- Edit -->
+<a href="invoice-edit.html"
+  class="w-32-px h-32-px bg-success-focus text-success-main rounded-circle d-inline-flex align-items-center justify-content-center"
+  title="Edit">
+  <iconify-icon icon="lucide:edit"></iconify-icon>
+</a>
+
+<!-- Delete -->
+<a href="javascript:void(0)"
+  class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center"
+  data-bs-toggle="modal" data-bs-target="#deleteServiceModal"
+  title="Delete">
+  <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
+</a>
+
                 </td>
               </tr>
               <tr>
@@ -1010,29 +1062,34 @@ html[data-theme="light"] [data-theme-toggle] {
                   </div>
                 </td>
                 <td>10 Feb 2024</td>
-                <td>$150.00</td>
+                <td>₹150.00</td>
                 <td> <span
                     class="bg-success-focus text-success-main px-24 py-4 rounded-pill fw-medium text-sm">Paid</span>
                 </td>
              
                 <td>
-                  <a href="invoice-preview.html" target="_blank"
-                    class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center">
-                    <iconify-icon icon="iconamoon:eye-light"></iconify-icon>
-                  </a>
-                  <a href="javascript:void(0)"
-                    class="w-32-px h-32-px bg-success-focus text-success-main rounded-circle d-inline-flex align-items-center justify-content-center">
-                    <iconify-icon icon="lucide:edit"></iconify-icon>
-                  </a>
-                  <!-- <a href="javascript:void(0)"
-                    class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center">
-                    <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
-                  </a> -->
-                  <a href="javascript:void(0)"
-                    class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center"
-                    data-bs-toggle="modal" data-bs-target="#deleteServiceModal">
-                    <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
-                  </a>
+                  <!-- Preview -->
+<a href="invoice-preview.html" target="_blank"
+  class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center"
+  title="Preview">
+  <iconify-icon icon="iconamoon:eye-light"></iconify-icon>
+</a>
+
+<!-- Edit -->
+<a href="invoice-edit.html"
+  class="w-32-px h-32-px bg-success-focus text-success-main rounded-circle d-inline-flex align-items-center justify-content-center"
+  title="Edit">
+  <iconify-icon icon="lucide:edit"></iconify-icon>
+</a>
+
+<!-- Delete -->
+<a href="javascript:void(0)"
+  class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center"
+  data-bs-toggle="modal" data-bs-target="#deleteServiceModal"
+  title="Delete">
+  <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
+</a>
+
                 </td>
               </tr>
               <tr>
@@ -1048,29 +1105,34 @@ html[data-theme="light"] [data-theme-toggle] {
                   </div>
                 </td>
                 <td>15 March 2024</td>
-                <td>$150.00</td>
+                <td>₹150.00</td>
                 <td> <span
                     class="bg-warning-focus text-warning-main px-24 py-4 rounded-pill fw-medium text-sm">Pending</span>
                 </td>
                
                 <td>
-                  <a href="invoice-preview.html" target="_blank"
-                    class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center">
-                    <iconify-icon icon="iconamoon:eye-light"></iconify-icon>
-                  </a>
-                  <a href="javascript:void(0)"
-                    class="w-32-px h-32-px bg-success-focus text-success-main rounded-circle d-inline-flex align-items-center justify-content-center">
-                    <iconify-icon icon="lucide:edit"></iconify-icon>
-                  </a>
-                  <!-- <a href="javascript:void(0)"
-                    class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center">
-                    <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
-                  </a> -->
-                  <a href="javascript:void(0)"
-                    class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center"
-                    data-bs-toggle="modal" data-bs-target="#deleteServiceModal">
-                    <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
-                  </a>
+                 <!-- Preview -->
+<a href="invoice-preview.html" target="_blank"
+  class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center"
+  title="Preview">
+  <iconify-icon icon="iconamoon:eye-light"></iconify-icon>
+</a>
+
+<!-- Edit -->
+<a href="invoice-edit.html"
+  class="w-32-px h-32-px bg-success-focus text-success-main rounded-circle d-inline-flex align-items-center justify-content-center"
+  title="Edit">
+  <iconify-icon icon="lucide:edit"></iconify-icon>
+</a>
+
+<!-- Delete -->
+<a href="javascript:void(0)"
+  class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center"
+  data-bs-toggle="modal" data-bs-target="#deleteServiceModal"
+  title="Delete">
+  <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
+</a>
+
                 </td>
               </tr>
               <tr>
@@ -1086,29 +1148,34 @@ html[data-theme="light"] [data-theme-toggle] {
                   </div>
                 </td>
                 <td>15 March 2024</td>
-                <td>$150.00</td>
+                <td>₹150.00</td>
                 <td> <span
                     class="bg-success-focus text-success-main px-24 py-4 rounded-pill fw-medium text-sm">Paid</span>
                 </td>
                        </td>
                 <td>
-                  <a href="invoice-preview.html" target="_blank"
-                    class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center">
-                    <iconify-icon icon="iconamoon:eye-light"></iconify-icon>
-                  </a>
-                  <a href="javascript:void(0)"
-                    class="w-32-px h-32-px bg-success-focus text-success-main rounded-circle d-inline-flex align-items-center justify-content-center">
-                    <iconify-icon icon="lucide:edit"></iconify-icon>
-                  </a>
-                  <!-- <a href="javascript:void(0)"
-                    class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center">
-                    <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
-                  </a> -->
-                  <a href="javascript:void(0)"
-                    class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center"
-                    data-bs-toggle="modal" data-bs-target="#deleteServiceModal">
-                    <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
-                  </a>
+                  <!-- Preview -->
+<a href="invoice-preview.html" target="_blank"
+  class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center"
+  title="Preview">
+  <iconify-icon icon="iconamoon:eye-light"></iconify-icon>
+</a>
+
+<!-- Edit -->
+<a href="invoice-edit.html"
+  class="w-32-px h-32-px bg-success-focus text-success-main rounded-circle d-inline-flex align-items-center justify-content-center"
+  title="Edit">
+  <iconify-icon icon="lucide:edit"></iconify-icon>
+</a>
+
+<!-- Delete -->
+<a href="javascript:void(0)"
+  class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center"
+  data-bs-toggle="modal" data-bs-target="#deleteServiceModal"
+  title="Delete">
+  <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
+</a>
+
                 </td>
               </tr>
               <tr>
@@ -1124,29 +1191,34 @@ html[data-theme="light"] [data-theme-toggle] {
                   </div>
                 </td>
                 <td>27 April 2024</td>
-                <td>$250.00</td>
+                <td>₹250.00</td>
                 <td> <span
                     class="bg-success-focus text-success-main px-24 py-4 rounded-pill fw-medium text-sm">Paid</span>
                 </td>
                
                 <td>
-                  <a href="invoice-preview.html" target="_blank"
-                    class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center">
-                    <iconify-icon icon="iconamoon:eye-light"></iconify-icon>
-                  </a>
-                  <a href="javascript:void(0)"
-                    class="w-32-px h-32-px bg-success-focus text-success-main rounded-circle d-inline-flex align-items-center justify-content-center">
-                    <iconify-icon icon="lucide:edit"></iconify-icon>
-                  </a>
-                  <!-- <a href="javascript:void(0)"
-                    class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center">
-                    <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
-                  </a> -->
-                  <a href="javascript:void(0)"
-                    class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center"
-                    data-bs-toggle="modal" data-bs-target="#deleteServiceModal">
-                    <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
-                  </a>
+                 <!-- Preview -->
+<a href="invoice-preview.html" target="_blank"
+  class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center"
+  title="Preview">
+  <iconify-icon icon="iconamoon:eye-light"></iconify-icon>
+</a>
+
+<!-- Edit -->
+<a href="invoice-edit.html"
+  class="w-32-px h-32-px bg-success-focus text-success-main rounded-circle d-inline-flex align-items-center justify-content-center"
+  title="Edit">
+  <iconify-icon icon="lucide:edit"></iconify-icon>
+</a>
+
+<!-- Delete -->
+<a href="javascript:void(0)"
+  class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center"
+  data-bs-toggle="modal" data-bs-target="#deleteServiceModal"
+  title="Delete">
+  <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
+</a>
+
                 </td>
               </tr>
               <tr>
@@ -1162,29 +1234,34 @@ html[data-theme="light"] [data-theme-toggle] {
                   </div>
                 </td>
                 <td>27 April 2024</td>
-                <td>$250.00</td>
+                <td>₹250.00</td>
                 <td> <span
                     class="bg-warning-focus text-warning-main px-24 py-4 rounded-pill fw-medium text-sm">Pending</span>
                 </td>
                 
                 <td>
-                  <a href="invoice-preview.html" target="_blank"
-                    class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center">
-                    <iconify-icon icon="iconamoon:eye-light"></iconify-icon>
-                  </a>
-                  <a href="javascript:void(0)"
-                    class="w-32-px h-32-px bg-success-focus text-success-main rounded-circle d-inline-flex align-items-center justify-content-center">
-                    <iconify-icon icon="lucide:edit"></iconify-icon>
-                  </a>
-                  <!-- <a href="javascript:void(0)"
-                    class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center">
-                    <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
-                  </a> -->
-                  <a href="javascript:void(0)"
-                    class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center"
-                    data-bs-toggle="modal" data-bs-target="#deleteServiceModal">
-                    <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
-                  </a>
+                  <!-- Preview -->
+<a href="invoice-preview.html" target="_blank"
+  class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center"
+  title="Preview">
+  <iconify-icon icon="iconamoon:eye-light"></iconify-icon>
+</a>
+
+<!-- Edit -->
+<a href="invoice-edit.html"
+  class="w-32-px h-32-px bg-success-focus text-success-main rounded-circle d-inline-flex align-items-center justify-content-center"
+  title="Edit">
+  <iconify-icon icon="lucide:edit"></iconify-icon>
+</a>
+
+<!-- Delete -->
+<a href="javascript:void(0)"
+  class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center"
+  data-bs-toggle="modal" data-bs-target="#deleteServiceModal"
+  title="Delete">
+  <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
+</a>
+
                 </td>
               </tr>
               <tr>
@@ -1200,29 +1277,34 @@ html[data-theme="light"] [data-theme-toggle] {
                   </div>
                 </td>
                 <td>30 April 2024</td>
-                <td>$250.00</td>
+                <td>₹250.00</td>
                 <td> <span
                     class="bg-success-focus text-success-main px-24 py-4 rounded-pill fw-medium text-sm">Paid</span>
                 </td>
                 
                 <td>
-                  <a href="invoice-preview.html" target="_blank"
-                    class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center">
-                    <iconify-icon icon="iconamoon:eye-light"></iconify-icon>
-                  </a>
-                  <a href="javascript:void(0)"
-                    class="w-32-px h-32-px bg-success-focus text-success-main rounded-circle d-inline-flex align-items-center justify-content-center">
-                    <iconify-icon icon="lucide:edit"></iconify-icon>
-                  </a>
-                  <!-- <a href="javascript:void(0)"
-                    class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center">
-                    <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
-                  </a> -->
-                  <a href="javascript:void(0)"
-                    class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center"
-                    data-bs-toggle="modal" data-bs-target="#deleteServiceModal">
-                    <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
-                  </a>
+                  <!-- Preview -->
+<a href="invoice-preview.html" target="_blank"
+  class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center"
+  title="Preview">
+  <iconify-icon icon="iconamoon:eye-light"></iconify-icon>
+</a>
+
+<!-- Edit -->
+<a href="invoice-edit.html"
+  class="w-32-px h-32-px bg-success-focus text-success-main rounded-circle d-inline-flex align-items-center justify-content-center"
+  title="Edit">
+  <iconify-icon icon="lucide:edit"></iconify-icon>
+</a>
+
+<!-- Delete -->
+<a href="javascript:void(0)"
+  class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center"
+  data-bs-toggle="modal" data-bs-target="#deleteServiceModal"
+  title="Delete">
+  <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
+</a>
+
                 </td>
               </tr>
               <tr>
@@ -1238,29 +1320,34 @@ html[data-theme="light"] [data-theme-toggle] {
                   </div>
                 </td>
                 <td>30 April 2024</td>
-                <td>$250.00</td>
+                <td>₹250.00</td>
                 <td> <span
                     class="bg-success-focus text-success-main px-24 py-4 rounded-pill fw-medium text-sm">Paid</span>
                 </td>
                
                 <td>
-                  <a href="invoice-preview.html" target="_blank"
-                    class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center">
-                    <iconify-icon icon="iconamoon:eye-light"></iconify-icon>
-                  </a>
-                  <a href="javascript:void(0)"
-                    class="w-32-px h-32-px bg-success-focus text-success-main rounded-circle d-inline-flex align-items-center justify-content-center">
-                    <iconify-icon icon="lucide:edit"></iconify-icon>
-                  </a>
-                  <!-- <a href="javascript:void(0)"
-                    class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center">
-                    <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
-                  </a> -->
-                  <a href="javascript:void(0)"
-                    class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center"
-                    data-bs-toggle="modal" data-bs-target="#deleteServiceModal">
-                    <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
-                  </a>
+                  <!-- Preview -->
+<a href="invoice-preview.html" target="_blank"
+  class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center"
+  title="Preview">
+  <iconify-icon icon="iconamoon:eye-light"></iconify-icon>
+</a>
+
+<!-- Edit -->
+<a href="invoice-edit.html"
+  class="w-32-px h-32-px bg-success-focus text-success-main rounded-circle d-inline-flex align-items-center justify-content-center"
+  title="Edit">
+  <iconify-icon icon="lucide:edit"></iconify-icon>
+</a>
+
+<!-- Delete -->
+<a href="javascript:void(0)"
+  class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center"
+  data-bs-toggle="modal" data-bs-target="#deleteServiceModal"
+  title="Delete">
+  <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
+</a>
+
                 </td>
               </tr>
             </tbody>
@@ -1305,7 +1392,7 @@ html[data-theme="light"] [data-theme-toggle] {
           <!-- Modal Header with underline -->
           <div class="modal-header border-0 flex-column align-items-start position-relative" style="background-color: #e5fae5;">
             <h6 class="modal-title fw-semibold m-0" id="deleteServiceModalLabel">
-              Delete Service
+              Delete Invoice
             </h6>
             <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"
               aria-label="Close"></button>

@@ -134,14 +134,25 @@
           </a>
 
         </li>
-        
+        <li>
+          <a href="quotation-add.html">
+            <iconify-icon icon="mdi:file-cog-outline" class="menu-icon"></iconify-icon>
+            <span>Create Quotation</span>
+          </a>
+        </li>
+        <li>
+          <a href="quotation-manage.html">
+            <iconify-icon icon="mdi:file-multiple-outline" class="menu-icon"></iconify-icon>
+            <span>Manage Quotation</span>
+          </a>
+        </li>
         <li>
           <a href="invoice-add.html">
             <iconify-icon icon="mdi:file-plus-outline" class="menu-icon"></iconify-icon>
             <span>Create Invoice</span>
           </a>
         </li>
-<li>
+        <li>
           <a href="invoice-list.html">
             <iconify-icon icon="mdi:file-document-outline" class="menu-icon"></iconify-icon>
             <span>Manage Invoice</span>
@@ -166,19 +177,35 @@
 
 
     </div>
-    <div class="sidebar-footer mt-auto text-center p-3">
-      <p class="text-muted text-sm mb-0 d-flex justify-content-center align-items-center gap-1">
-        <i class="fas fa-headset text-primary"></i>
-     
-        <button class="btn btn-link text-decoration-underline text-primary fw-medium p-0" data-bs-toggle="modal"
-          data-bs-target="#helpModal">
-          Need help?
-        </button>
-      </p>
+    <div class="sidebar-footer mt-auto text-center p-3 border-top">
+      <div class="d-flex justify-content-center align-items-center gap-2">
+        <div
+          class="bg-primary bg-opacity-10 text-primary rounded-circle p-2 d-flex align-items-center justify-content-center"
+          style="width: 38px; height: 38px;">
+          <i class="fas fa-headset fs-5"></i>
+        </div>
+        <div class="text-start">
+          <button class="btn btn-link p-0 fw-semibold text-primary text-decoration-none hover-underline fs-sm"
+            data-bs-toggle="modal" data-bs-target="#helpModal">
+            Need help?<br>
+            <span class="text-muted small">Contact support</span>
+          </button>
+        </div>
+      </div>
     </div>
+
 
   </aside>
   <style>
+    .hover-underline:hover {
+      text-decoration: underline !important;
+      color: #0d6efd !important;
+    }
+
+    .fs-sm {
+      font-size: 0.875rem;
+    }
+
     .sidebar {
       display: flex;
       flex-direction: column;
@@ -612,11 +639,26 @@
 
       <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-24">
         <h6 class="fw-semibold mb-0">Dashboard</h6>
-        <a href="invoice-add.html" class="btn btn-sm radius-8 d-inline-flex align-items-center gap-1"
-          style="background-color: #089404; color: #fff;">
+        <a href="invoice-add.html" class="custom-btn d-inline-flex align-items-center gap-1">
           <iconify-icon icon="mdi:file-document-edit-outline" class="text-xl"></iconify-icon>
           Create Invoice
         </a>
+        <style>
+          .custom-btn {
+            padding: 6px 16px;
+            border: 2px solid #089404;
+            border-radius: 50px;
+            color: #089404;
+            background-color: transparent;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            text-decoration: none;
+          }
+
+          .custom-btn:hover {
+            background-color: #089404;
+            color: #fff;
+          }
+        </style>
       </div>
 
 
@@ -843,16 +885,20 @@
 
                   <td>
 
+                    <!-- Preview Button -->
                     <a href="invoice-preview.html"
-                      class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center">
+                      class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center"
+                      title="Preview">
                       <iconify-icon icon="iconamoon:eye-light"></iconify-icon>
                     </a>
 
+                    <!-- Delete Button -->
                     <a href="javascript:void(0)"
                       class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center"
-                      data-bs-toggle="modal" data-bs-target="#deleteDueInvoiceModal">
+                      data-bs-toggle="modal" data-bs-target="#deleteDueInvoiceModal" title="Delete">
                       <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
                     </a>
+
                   </td>
                 </tr>
                 <tr>
@@ -872,16 +918,20 @@
                   <td>28/06/2025</td>
                   <td>
 
+                    <!-- Preview Button -->
                     <a href="invoice-preview.html"
-                      class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center">
+                      class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center"
+                      title="Preview">
                       <iconify-icon icon="iconamoon:eye-light"></iconify-icon>
                     </a>
 
+                    <!-- Delete Button -->
                     <a href="javascript:void(0)"
                       class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center"
-                      data-bs-toggle="modal" data-bs-target="#deleteDueInvoiceModal">
+                      data-bs-toggle="modal" data-bs-target="#deleteDueInvoiceModal" title="Delete">
                       <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
                     </a>
+
                   </td>
                 </tr>
                 <tr>
@@ -900,17 +950,20 @@
                   <td>1/06/2025</td>
                   <td>12/06/2025</td>
                   <td>
+                    <!-- Preview Button -->
                     <a href="invoice-preview.html"
-                      class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center">
+                      class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center"
+                      title="Preview">
                       <iconify-icon icon="iconamoon:eye-light"></iconify-icon>
                     </a>
 
-
+                    <!-- Delete Button -->
                     <a href="javascript:void(0)"
                       class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center"
-                      data-bs-toggle="modal" data-bs-target="#deleteDueInvoiceModal">
+                      data-bs-toggle="modal" data-bs-target="#deleteDueInvoiceModal" title="Delete">
                       <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
                     </a>
+
                   </td>
                 </tr>
                 <tr>
@@ -929,17 +982,20 @@
                   <td>1/06/2025</td>
                   <td>17/06/2025</td>
                   <td>
-
+                    <!-- Preview Button -->
                     <a href="invoice-preview.html"
-                      class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center">
+                      class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center"
+                      title="Preview">
                       <iconify-icon icon="iconamoon:eye-light"></iconify-icon>
                     </a>
 
+                    <!-- Delete Button -->
                     <a href="javascript:void(0)"
                       class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center"
-                      data-bs-toggle="modal" data-bs-target="#deleteDueInvoiceModal">
+                      data-bs-toggle="modal" data-bs-target="#deleteDueInvoiceModal" title="Delete">
                       <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
                     </a>
+
                   </td>
                 </tr>
 

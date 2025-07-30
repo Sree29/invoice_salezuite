@@ -149,7 +149,18 @@
          
         </ul> -->
         </li>
-        
+         <li>
+          <a href="quotation-add.html">
+            <iconify-icon icon="mdi:file-cog-outline" class="menu-icon"></iconify-icon>
+            <span>Create Quotation</span>
+          </a>
+        </li>
+         <li>
+          <a href="quotation-manage.html">
+            <iconify-icon icon="mdi:file-multiple-outline" class="menu-icon"></iconify-icon>
+            <span>Manage Quotation</span>
+          </a>
+        </li>
         <li>
           <a href="invoice-add.html">
             <iconify-icon icon="mdi:file-plus-outline" class="menu-icon"></iconify-icon>
@@ -257,20 +268,34 @@
 
       </ul>
     </div>
-    <div class="sidebar-footer mt-auto text-center p-3">
-      <p class="text-muted text-sm mb-0 d-flex justify-content-center align-items-center gap-1">
-        <i class="fas fa-headset text-primary"></i>
-     
-        <button class="btn btn-link text-decoration-underline text-primary fw-medium p-0" data-bs-toggle="modal"
-          data-bs-target="#helpModal">
-          Need help?
-        </button>
-      </p>
+    <div class="sidebar-footer mt-auto text-center p-3 border-top">
+  <div class="d-flex justify-content-center align-items-center gap-2">
+    <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 38px; height: 38px;">
+      <i class="fas fa-headset fs-5"></i>
     </div>
+    <div class="text-start">
+      <button class="btn btn-link p-0 fw-semibold text-primary text-decoration-none hover-underline fs-sm"
+              data-bs-toggle="modal" data-bs-target="#helpModal">
+        Need help?<br>
+        <span class="text-muted small">Contact support</span>
+      </button>
+    </div>
+  </div>
+</div>
+
 
 
   </aside>
 <style>
+  .hover-underline:hover {
+  text-decoration: underline !important;
+  color: #0d6efd !important;
+}
+
+.fs-sm {
+  font-size: 0.875rem;
+}
+
   .sidebar {
   display: flex;
   flex-direction: column;
@@ -846,12 +871,35 @@
                     </div>  -->
 
                     <div>
-                      <button type="button" id="addRow"
-                        class="btn btn-sm radius-8 d-inline-flex align-items-center gap-1"
-                        style="background-color: #089404; color: #fff;">
-                        <iconify-icon icon="simple-line-icons:plus" class="text-xl"></iconify-icon>
-                        Add New
-                      </button>
+                     <button type="button" id="addRow"
+  class="btn custom-outline-btn d-inline-flex align-items-center gap-1">
+  <iconify-icon icon="simple-line-icons:plus" class="text-xl"></iconify-icon>
+  Add New
+</button>
+<style>
+  .custom-outline-btn {
+  border: 2px solid #089404;
+  border-radius: 50px;
+  background-color: transparent;
+  color: #089404;
+  padding: 6px 16px;
+  transition: all 0.3s ease;
+}
+
+.custom-outline-btn iconify-icon {
+  color: #089404;
+}
+
+.custom-outline-btn:hover {
+  background-color: #089404;
+  color: #fff;
+}
+
+.custom-outline-btn:hover iconify-icon {
+  color: #fff;
+}
+
+</style>
                     </div>
                     <style>
                       .no-outline {
@@ -1074,19 +1122,7 @@
                               </td>
                             </tr>
 
-                            <!-- <tr>
-                              <td class="pe-64">Discount:</td>
-                              <td class="pe-16">
-                                
-                                <span class="text-primary-light fw-semibold">$0.00</span>
-                              </td>
-                            </tr> -->
-                            <!-- <tr>
-                              <td class="pe-64 border-bottom pb-4">Tax:</td>
-                              <td class="pe-16 border-bottom pb-4">
-                                <span class="text-primary-light fw-semibold">0.00</span>
-                              </td>
-                            </tr> -->
+                          
                           </tbody>
                         </table>
                       </div>
@@ -1104,20 +1140,65 @@
                     <div class="text-sm border-top d-inline-block px-12">Signature of Authorized</div>
                   </div>
                   <div class="d-flex justify-content-end gap-2 mt-32">
-                    <!-- Preview Button -->
-                    <a href="invoice-preview.html" target="_blank"
-                      class="btn btn-outline-secondary radius-8 d-inline-flex align-items-center gap-1">
-                      <iconify-icon icon="mdi:eye-outline" class="text-lg"></iconify-icon>
-                      Preview
-                    </a>
+  <!-- Preview Button -->
+  <a href="invoice-preview.html" target="_blank"
+    class="btn custom-outline-grey d-inline-flex align-items-center gap-1">
+    <iconify-icon icon="mdi:eye-outline" class="text-lg"></iconify-icon>
+    Preview
+  </a>
 
-                    <!-- Save Button -->
-                    <button type="button" class="btn btn-sm radius-8 d-inline-flex align-items-center gap-1"
-                      style="background-color: #089404; color: #fff;">
-                      <iconify-icon icon="simple-line-icons:check" class="text-xl"></iconify-icon>
-                      Save
-                    </button>
-                  </div>
+  <!-- Save Button -->
+  <button type="button" class="btn custom-outline-green d-inline-flex align-items-center gap-1">
+    <iconify-icon icon="simple-line-icons:check" class="text-xl"></iconify-icon>
+    Save
+  </button>
+</div>
+<style>
+  .custom-outline-green {
+  border: 2px solid #089404;
+  border-radius: 50px;
+  background-color: transparent;
+  color: #089404;
+  padding: 6px 16px;
+  transition: all 0.3s ease;
+}
+
+.custom-outline-green iconify-icon {
+  color: #089404;
+}
+
+.custom-outline-green:hover {
+  background-color: #089404;
+  color: #fff;
+}
+
+.custom-outline-green:hover iconify-icon {
+  color: #fff;
+}
+
+.custom-outline-grey {
+  border: 2px solid #6c757d; /* Bootstrap secondary */
+  border-radius: 50px;
+  background-color: transparent;
+  color: #6c757d;
+  padding: 6px 16px;
+  transition: all 0.3s ease;
+}
+
+.custom-outline-grey iconify-icon {
+  color: #6c757d;
+}
+
+.custom-outline-grey:hover {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.custom-outline-grey:hover iconify-icon {
+  color: #fff;
+}
+
+</style>
 
                 </div>
               </div>
